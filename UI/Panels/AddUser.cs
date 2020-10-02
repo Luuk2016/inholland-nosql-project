@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI
+namespace UI.Panels
 {
-    public partial class Form1 : Form
+    public partial class AddUser : Form
     {
-        public Form1()
+        public AddUser()
         {
             InitializeComponent();
         }
