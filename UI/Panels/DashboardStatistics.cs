@@ -16,5 +16,10 @@ namespace UI.Pages
         {
             InitializeComponent();
         }
+
+        private void btnShowList_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

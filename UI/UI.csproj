@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\DashboardStatistics.resx">
+      <DependentUpon>DashboardStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
