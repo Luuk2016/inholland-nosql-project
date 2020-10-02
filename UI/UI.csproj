@@ -52,11 +52,11 @@
     <Compile Include="TGGUI.Designer.cs">
       <DependentUpon>TGGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panels\AddIncidentTicket.cs">
+    <Compile Include="Panels\ManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panels\AddIncidentTicket.Designer.cs">
-      <DependentUpon>AddIncidentTicket.cs</DependentUpon>
+    <Compile Include="Panels\ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\AddUser.cs">
       <SubType>Form</SubType>
@@ -70,11 +70,11 @@
     <Compile Include="Panels\DashboardStatistics.Designer.cs">
       <DependentUpon>DashboardStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panels\ManageUsers.cs">
+    <Compile Include="Panels\AddIncidentTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panels\ManageUsers.Designer.cs">
-      <DependentUpon>ManageUsers.cs</DependentUpon>
+    <Compile Include="Panels\AddIncidentTicket.Designer.cs">
+      <DependentUpon>AddIncidentTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\TicketOverview.cs">
       <SubType>Form</SubType>
@@ -102,6 +102,9 @@
     <EmbeddedResource Include="Pages\MainNavigation.resx">
       <DependentUpon>MainNavigation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\ManageUsers.resx">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -124,5 +127,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
