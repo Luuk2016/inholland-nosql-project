@@ -102,8 +102,14 @@
     <EmbeddedResource Include="Pages\MainNavigation.resx">
       <DependentUpon>MainNavigation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AddIncidentTicket.resx">
+      <DependentUpon>AddIncidentTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\TicketOverview.resx">
+      <DependentUpon>TicketOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -16,5 +16,15 @@ namespace UI.Pages
         {
             InitializeComponent();
         }
+
+        private void btnCreateTicket_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbEmailFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
