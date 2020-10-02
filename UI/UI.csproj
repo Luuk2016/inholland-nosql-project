@@ -105,6 +105,9 @@
     <EmbeddedResource Include="Panels\AddIncidentTicket.resx">
       <DependentUpon>AddIncidentTicket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
     </EmbeddedResource>
