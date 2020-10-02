@@ -7,7 +7,7 @@ namespace OtherFunctions
     public static class Cryptography
     {
         /*
-         * Generate a password hash
+         * Generate a password hash with salt
          * @param string password - the users password
          * @param string hash2 - the generated salt
          * @return string - the hashed password
@@ -44,12 +44,7 @@ namespace OtherFunctions
          */
         public static bool CompareHashes(string hash1, string hash2)
         {
-            if (hash1 == hash2)
-            {
-                return true;
-            }
-
-            return false;
+            return hash1.Equals(hash2);
         }
     }
 }
