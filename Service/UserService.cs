@@ -17,6 +17,11 @@ namespace Service
             userDAO = new UserDAO();
         }
 
+        public UserModel LoginUser(string email, string password)
+        {
+            return userDAO.LoginUser(email, password);
+        }
+
         public void CreateUser(UserModel user)
         {
             userDAO.CreateUser(user);
