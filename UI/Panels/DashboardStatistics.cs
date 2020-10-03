@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.GlobalPage;
 
 namespace UI.Pages
 {
-    public partial class DashboardStatistics : Form
+    public partial class DashboardStatistics : BaseForm
     {
+        public EventHandler btnShowListClick;
         public DashboardStatistics()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace UI.Pages
 
         private void btnShowList_Click(object sender, EventArgs e)
         {
-
+            btnShowListClick?.Invoke(sender, e);
         }
     }
 }

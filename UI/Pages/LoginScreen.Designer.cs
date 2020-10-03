@@ -1,4 +1,4 @@
-﻿namespace UI.Toolbar
+﻿namespace UI.Pages
 {
     partial class LoginScreen
     {
@@ -36,8 +36,8 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtbPassword = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.rbRemember = new System.Windows.Forms.RadioButton();
             this.lblForgotPassword = new System.Windows.Forms.Label();
+            this.cbRemember = new System.Windows.Forms.CheckBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -155,8 +155,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.rbRemember, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblForgotPassword, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cbRemember, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(278, 459);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -164,20 +164,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(426, 43);
             this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // rbRemember
-            // 
-            this.rbRemember.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbRemember.AutoSize = true;
-            this.rbRemember.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRemember.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.rbRemember.Location = new System.Drawing.Point(3, 11);
-            this.rbRemember.Name = "rbRemember";
-            this.rbRemember.Size = new System.Drawing.Size(111, 20);
-            this.rbRemember.TabIndex = 0;
-            this.rbRemember.TabStop = true;
-            this.rbRemember.Text = "Remember Me";
-            this.rbRemember.UseVisualStyleBackColor = true;
             // 
             // lblForgotPassword
             // 
@@ -193,6 +179,19 @@
             this.lblForgotPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblForgotPassword_MouseClick);
             this.lblForgotPassword.MouseEnter += new System.EventHandler(this.lblForgotPassword_MouseEnter);
             this.lblForgotPassword.MouseLeave += new System.EventHandler(this.lblForgotPassword_MouseLeave);
+            // 
+            // cbRemember
+            // 
+            this.cbRemember.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbRemember.AutoSize = true;
+            this.cbRemember.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRemember.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbRemember.Location = new System.Drawing.Point(3, 11);
+            this.cbRemember.Name = "cbRemember";
+            this.cbRemember.Size = new System.Drawing.Size(126, 21);
+            this.cbRemember.TabIndex = 8;
+            this.cbRemember.Text = "Remember me";
+            this.cbRemember.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
@@ -237,8 +236,8 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtbPassword;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.RadioButton rbRemember;
         private System.Windows.Forms.Label lblForgotPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.CheckBox cbRemember;
     }
 }

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.GlobalPage;
 
 namespace UI.Pages
 {
-    public partial class AddIncidentTicket : Form
+    public partial class AddIncidentTicket : BaseForm
     {
+        public EventHandler btnCancelClick;
         public AddIncidentTicket()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace UI.Pages
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            btnCancelClick?.Invoke(sender, e);
         }
     }
 }

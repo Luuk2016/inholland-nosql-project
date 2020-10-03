@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.GlobalPage;
 
 namespace UI.Pages
 {
-    public partial class ManageUsers : Form
+    public partial class ManageUsers : BaseForm
     {
+        public EventHandler btnAddUserClick;
         public ManageUsers()
         {
             InitializeComponent();
@@ -19,12 +21,17 @@ namespace UI.Pages
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-
+            btnAddUserClick?.Invoke(sender, e);
         }
 
         private void txtbEmailFilter_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtbEmailFilter_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtbEmailFilter.Clear();
         }
     }
 }

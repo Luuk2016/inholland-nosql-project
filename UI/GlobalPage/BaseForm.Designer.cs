@@ -1,6 +1,6 @@
-﻿namespace UI
+﻿namespace UI.GlobalPage
 {
-    partial class TGGUI
+    partial class BaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.HomePnl = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
-            // HomePnl
-            // 
-            this.HomePnl.ColumnCount = 1;
-            this.HomePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HomePnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HomePnl.Location = new System.Drawing.Point(0, 0);
-            this.HomePnl.Name = "HomePnl";
-            this.HomePnl.RowCount = 1;
-            this.HomePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HomePnl.Size = new System.Drawing.Size(800, 450);
-            this.HomePnl.TabIndex = 0;
-            // 
-            // TGGUI
+            // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.HomePnl);
-            this.Name = "TGGUI";
-            this.Text = "Servicedesk";
+            this.ClientSize = new System.Drawing.Size(120, 0);
+            this.Name = "BaseForm";
+            this.Text = "BaseForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel HomePnl;
     }
 }
-

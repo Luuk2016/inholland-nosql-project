@@ -1,6 +1,6 @@
-﻿namespace UI.Toolbar
+﻿namespace UI.Pages
 {
-    partial class Toolbar
+    partial class MainNavigation
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.PagePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -40,6 +39,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnIncidentManagement = new System.Windows.Forms.Button();
             this.btnUserManagement = new System.Windows.Forms.Button();
+            this.pageLayoutContent = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -51,8 +51,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.PagePanel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pageLayoutContent, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -61,14 +61,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 911);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // PagePanel
-            // 
-            this.PagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PagePanel.Location = new System.Drawing.Point(3, 153);
-            this.PagePanel.Name = "PagePanel";
-            this.PagePanel.Size = new System.Drawing.Size(978, 755);
-            this.PagePanel.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -198,13 +190,25 @@
             this.btnUserManagement.UseVisualStyleBackColor = true;
             this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
             // 
-            // Toolbar
+            // pageLayoutContent
+            // 
+            this.pageLayoutContent.ColumnCount = 1;
+            this.pageLayoutContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pageLayoutContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pageLayoutContent.Location = new System.Drawing.Point(3, 153);
+            this.pageLayoutContent.Name = "pageLayoutContent";
+            this.pageLayoutContent.RowCount = 1;
+            this.pageLayoutContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pageLayoutContent.Size = new System.Drawing.Size(978, 755);
+            this.pageLayoutContent.TabIndex = 2;
+            // 
+            // MainNavigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 911);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Toolbar";
+            this.Name = "MainNavigation";
             this.Text = "Toolbar";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -219,7 +223,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel PagePanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -230,5 +233,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label lblNoDesk;
         private System.Windows.Forms.Label lblLicence;
+        private System.Windows.Forms.TableLayoutPanel pageLayoutContent;
     }
 }

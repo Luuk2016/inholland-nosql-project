@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.GlobalPage;
 
 namespace UI.Panels
 {
-    public partial class AddUser : Form
+    public partial class AddUser : BaseForm
     {
+        public EventHandler btnCancelClick;
         public AddUser()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace UI.Panels
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            btnCancelClick?.Invoke(sender, e);
         }
     }
 }

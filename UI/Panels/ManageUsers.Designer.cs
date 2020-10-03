@@ -96,6 +96,7 @@
             this.txtbEmailFilter.Size = new System.Drawing.Size(431, 30);
             this.txtbEmailFilter.TabIndex = 0;
             this.txtbEmailFilter.Text = "Filter by email";
+            this.txtbEmailFilter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbEmailFilter_MouseClick);
             this.txtbEmailFilter.TextChanged += new System.EventHandler(this.txtbEmailFilter_TextChanged);
             // 
             // btnAddUser

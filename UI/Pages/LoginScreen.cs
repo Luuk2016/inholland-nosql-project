@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.GlobalPage;
 
-namespace UI.Toolbar
+namespace UI.Pages
 {
-    public partial class LoginScreen : Form
+    public partial class LoginScreen : BaseForm
     {
+        public EventHandler btnForgotPasswordClick;
+        public EventHandler btnLoginClick;
         public LoginScreen()
         {
             InitializeComponent();
@@ -19,12 +22,12 @@ namespace UI.Toolbar
 
         private void lblForgotPassword_MouseClick(object sender, MouseEventArgs e)
         {
-
+            btnForgotPasswordClick?.Invoke(sender, e);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            btnLoginClick?.Invoke(sender, e);
         }
 
         private void lblForgotPassword_MouseEnter(object sender, EventArgs e)
