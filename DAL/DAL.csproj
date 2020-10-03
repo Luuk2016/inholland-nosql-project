@@ -121,6 +121,10 @@
       <Project>{de4a4fe0-ad2f-4ac7-a141-341be5f409bb}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OtherFunctions\OtherFunctions.csproj">
+      <Project>{d91fd340-d6a6-4332-9544-b3bfdd77cb20}</Project>
+      <Name>OtherFunctions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

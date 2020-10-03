@@ -149,6 +149,7 @@
             this.txtbPassword.Name = "txtbPassword";
             this.txtbPassword.Size = new System.Drawing.Size(432, 29);
             this.txtbPassword.TabIndex = 5;
+            this.txtbPassword.UseSystemPasswordChar = true;
             // 
             // tableLayoutPanel2
             // 

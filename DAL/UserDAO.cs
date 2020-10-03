@@ -1,12 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using Model;
-
+using MongoDB.Driver;
+using OtherFunctions;
 
 namespace DAL
 {
     public class UserDAO : MongoBase
     {
+        /*
+         * Login the user
+         * @param string email - the filled in email
+         * @param string password - the filled in password
+         * @return UserModel user - object with user details
+         */
+        public UserModel LoginUser(string email, string password)
+        {
+            // Create a filter that will get the user by email
+            var filter = Builders<UserModel>.Filter.Eq("email", email);
+
+            // Get the user or null
+            UserModel user = GetRecordByFilter("users", filter);
+
+            // If no user has been found return NULL
+            if (user == null)
+            {
+                return null;
+            }
+
+            // Store the db stored password + salt
+            string storedPW = user.hashedPassword;
+            string storedSalt = user.salt;
+
+            // Generate the hash with the filled in password + stored salt
+            string inputPW = Cryptography.GeneratePasswordHash(password, storedSalt);
+
+            // Compare the filled in (hashed) password with the hash stored in the database
+            if (Cryptography.CompareHashes(inputPW, storedPW))
+            {
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /*
          * Create a new user
          * @param UserModel user - a UserModel object

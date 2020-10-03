@@ -33,14 +33,14 @@ namespace DAL
         * Get a record of the specified table by ID
         * @param string table - the name of the table/collecton
         * @param string id - the id of the record
-        * @return T - an object of the specified type
+        * @return T - an object of the specified type or NULL
         */
         public T GetRecordById<T>(string table, string id)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("_id", ObjectId.Parse(id));
 
-            return collection.Find(filter).First();
+            return collection.Find(filter).FirstOrDefault();
         }
 
         /*
@@ -65,6 +65,19 @@ namespace DAL
             var filter = Builders<T>.Filter.Eq("_id", ObjectId.Parse(id));
 
             collection.DeleteOne(filter);
+        }
+
+        /*
+        * Get a record from a table by using the specified filter
+        * @param string table - the name of the table/collecton
+        * @param FilterDefinition<T> filter - the filter
+        * @return T - an object of the specified type or NULL
+        */
+        public T GetRecordByFilter<T>(string table, FilterDefinition<T> filter)
+        {
+            var collection = db.GetCollection<T>(table);
+
+            return collection.Find(filter).FirstOrDefault();
         }
     }
 }
