@@ -7,24 +7,41 @@ namespace DAL
 {
     public class UserDAO : MongoBase
     {
+        /*
+         * Create a new user
+         * @param UserModel user - a UserModel object
+         */
         public void CreateUser(UserModel user)
         {
             InsertRecord("users", user);
         }
 
-        public UserModel ReadUser(string guid)
+        /*
+         * Get a user by ID
+         * @param string id - the id of the user
+         * @return UserModel - the user
+         */
+        public UserModel GetUserById(string id)
         {
-            return LoadRecordById<UserModel>("users", new Guid(guid));
+            return GetRecordById<UserModel>("users", id);
         }
 
-        public List<UserModel> ReadUsers()
+        /*
+         * Get all users
+         * @return List<UserModel> - all the users
+         */
+        public List<UserModel> GetUsers()
         {
-            return LoadRecords<UserModel>("users");
+            return GetTable<UserModel>("users");
         }
 
-        public void DeleteUser(string userID)
+        /*
+        * Delete a user
+        * @param string id - the id of the user
+        */
+        public void DeleteUser(string id)
         {
-            
+            DeleteRecordById<UserModel>("users", id);
         }
     }
 }

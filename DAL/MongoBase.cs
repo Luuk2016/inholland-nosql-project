@@ -16,33 +16,55 @@ namespace DAL
             db = client.GetDatabase("servicedesk");
         }
 
-        public List<T> LoadRecords<T>(string table)
-        {
-            var collection = db.GetCollection<T>(table);
-
-            return collection.Find(new BsonDocument()).ToList();
-        }
-
-        public T LoadRecordById<T>(string table, Guid id)
-        {
-            var collection = db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("Id", id);
-
-            return collection.Find(filter).First();
-        }
-
-        public void InsertRecord<T>(string table, T record)
-        {
-            var collection = db.GetCollection<T>(table);
-            collection.InsertOne(record);
-        }
-
+        /*
+        * Get a table
+        * @param string table - the name of the table/collecton
+        * @return List<T> - a list of the specified type
+        */
         public List<T> GetTable<T>(string table)
         {
             var collection = db.GetCollection<T>(table);
             var documents = collection.Find(new BsonDocument()).ToList();
 
             return documents;
+        }
+
+        /*
+        * Get a record of the specified table by ID
+        * @param string table - the name of the table/collecton
+        * @param string id - the id of the record
+        * @return T - an object of the specified type
+        */
+        public T GetRecordById<T>(string table, string id)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("_id", ObjectId.Parse(id));
+
+            return collection.Find(filter).First();
+        }
+
+        /*
+        * Insert a new record in the specified table/collection
+        * @param string table - the name of the table/collecton
+        * @param T record - an object
+        */
+        public void InsertRecord<T>(string table, T record)
+        {
+            var collection = db.GetCollection<T>(table);
+            collection.InsertOne(record);
+        }
+
+        /*
+        * Delete a record from the specified table by it's ID
+        * @param string table - the name of the table/collecton
+        * @param string id - the id of the record
+        */
+        public void DeleteRecordById<T>(string table, string id)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("_id", ObjectId.Parse(id));
+
+            collection.DeleteOne(filter);
         }
     }
 }

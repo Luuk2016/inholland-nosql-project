@@ -221,6 +221,10 @@
       <Project>{de4a4fe0-ad2f-4ac7-a141-341be5f409bb}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OtherFunctions\OtherFunctions.csproj">
+      <Project>{d91fd340-d6a6-4332-9544-b3bfdd77cb20}</Project>
+      <Name>OtherFunctions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{a9f9e03d-f186-42d6-bbab-b95f666937c8}</Project>
       <Name>Service</Name>

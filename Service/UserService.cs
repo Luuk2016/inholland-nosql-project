@@ -22,14 +22,19 @@ namespace Service
             userDAO.CreateUser(user);
         }
 
-        public List<UserModel> ReadUsers()
+        public List<UserModel> GetUsers()
         {
-            return userDAO.ReadUsers();
+            return userDAO.GetUsers();
         }
 
-        public UserModel ReadUser(string guid)
+        public UserModel GetUserById(string id)
         {
-            return userDAO.ReadUser(guid);
+            return userDAO.GetUserById(id);
+        }
+
+        public void DeleteUser(string id)
+        {
+            userDAO.DeleteUser(id);
         }
     }
 }
