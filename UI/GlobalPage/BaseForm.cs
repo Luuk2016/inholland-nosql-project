@@ -14,6 +14,7 @@ namespace UI.GlobalPage
     {
         protected virtual TableLayoutPanel TableLayoutPanel { get; set; }
         protected virtual List<BaseForm> FormPartials { get; set; }
+
         public BaseForm()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace UI.GlobalPage
         protected void LoadPanels()
         {
             if (TableLayoutPanel == null) return;
+
             foreach (var partialForm in FormPartials)
             {
                 partialForm.TopLevel = false;

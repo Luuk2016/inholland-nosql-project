@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 911);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 1039);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -199,14 +199,14 @@
             this.pageLayoutContent.Name = "pageLayoutContent";
             this.pageLayoutContent.RowCount = 1;
             this.pageLayoutContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pageLayoutContent.Size = new System.Drawing.Size(978, 755);
+            this.pageLayoutContent.Size = new System.Drawing.Size(978, 883);
             this.pageLayoutContent.TabIndex = 2;
             // 
             // MainNavigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 911);
+            this.ClientSize = new System.Drawing.Size(984, 1039);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainNavigation";
             this.Text = "Toolbar";

@@ -58,7 +58,6 @@ namespace UI.Pages
             ShowPanel(ticketOverviewPartial);
         }
 
-
         //ticketmanagement
         private void btnIncidentManagement_Click(object sender, EventArgs e)
         {
@@ -74,7 +73,6 @@ namespace UI.Pages
         {
             ShowPanel(ticketOverviewPartial);
         }
-
 
         //usermanagement
         private void btnUserManagement_Click(object sender, EventArgs e)

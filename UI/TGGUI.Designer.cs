@@ -40,14 +40,14 @@
             this.HomePnl.Name = "HomePnl";
             this.HomePnl.RowCount = 1;
             this.HomePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HomePnl.Size = new System.Drawing.Size(800, 450);
+            this.HomePnl.Size = new System.Drawing.Size(800, 481);
             this.HomePnl.TabIndex = 0;
             // 
             // TGGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 481);
             this.Controls.Add(this.HomePnl);
             this.Name = "TGGUI";
             this.Text = "Servicedesk";

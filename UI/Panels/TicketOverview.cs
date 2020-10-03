@@ -14,6 +14,7 @@ namespace UI.Pages
     public partial class TicketOverview : BaseForm
     {
         public EventHandler btnCreateTicketClick;
+
         public TicketOverview()
         {
             InitializeComponent();

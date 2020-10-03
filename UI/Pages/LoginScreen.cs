@@ -15,6 +15,7 @@ namespace UI.Pages
     {
         public EventHandler btnForgotPasswordClick;
         public EventHandler btnLoginClick;
+
         public LoginScreen()
         {
             InitializeComponent();

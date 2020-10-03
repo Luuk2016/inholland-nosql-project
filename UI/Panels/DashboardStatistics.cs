@@ -14,6 +14,7 @@ namespace UI.Pages
     public partial class DashboardStatistics : BaseForm
     {
         public EventHandler btnShowListClick;
+
         public DashboardStatistics()
         {
             InitializeComponent();

@@ -14,6 +14,7 @@ namespace UI.Pages
     public partial class ManageUsers : BaseForm
     {
         public EventHandler btnAddUserClick;
+
         public ManageUsers()
         {
             InitializeComponent();
