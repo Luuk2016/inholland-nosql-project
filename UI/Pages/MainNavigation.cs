@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
 using UI.Panels;
+using OtherFunctions;
 
 namespace UI.Pages
 {
@@ -88,6 +89,15 @@ namespace UI.Pages
         private void HandleAddUserCancelClick(object sender, EventArgs e)
         {
             ShowPanel(manageUsersPartial);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Wipe the current user details
+            Session.Wipe();
+            
+            // Open the loginscreen
+
         }
     }
 }
