@@ -33,7 +33,7 @@ namespace DAL
             string storedSalt = user.salt;
 
             // Generate the hash with the filled in password + stored salt
-            string inputPW = Cryptography.GeneratePasswordHash(password, storedSalt);
+            string inputPW = Cryptography.GeneratePasswordHash(password);
 
             // Compare the filled in (hashed) password with the hash stored in the database
             if (Cryptography.CompareHashes(inputPW, storedPW))
@@ -52,11 +52,6 @@ namespace DAL
          */
         public void CreateUser(UserModel user)
         {
-            string storedSalt = "427c78c8a0887b8a2a50a914cc654fd8dbd1a562da5d9bb4dfba480a77a5e32a";
-            string inputPW = Cryptography.GeneratePasswordHash(user.hashedPassword, storedSalt);
-            user.hashedPassword = inputPW;
-            user.salt = storedSalt;
-
             InsertRecord("users", user);
         }
 

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
+using OtherFunctions;
 
 namespace UI.Panels
 {
@@ -18,30 +19,33 @@ namespace UI.Panels
         public EventHandler btnCancelClick;
         private UserService uService;
         int count = 0;
+
         public AddUser()
         {
             InitializeComponent();
             uService = new UserService();
-            lbl_FirstNameWarning.Hide();
-            lbl_LastNameWarning.Hide();
-            lbl_LocationWarning.Hide();
-            lbl_MailWarning.Hide();
-            lbl_PasswordWarning.Hide();
-            lbl_PhoneNumberWarning.Hide();
-            lbl_TypeWarning.Hide();
-            btnAdd.Enabled = false;
         }
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            UserModel user = new UserModel();
-            user.firstName = txt_FirstName.Text;
-            user.lastName = txt_LastName.Text;
-            user.type = cmb_TypeUser.Text;
-            user.email = txt_Email.Text;
-            user.phoneNumber = txt_PhoneNumber.Text;
-            user.location = cmb_Location.Text;
-            user.hashedPassword = txt_Password.Text;
-            uService.CreateUser(user);
+            if (txt_FirstName.Text != "" || txt_LastName.Text != "")
+            {
+                UserModel user = new UserModel();
+
+                user.firstName = txt_FirstName.Text;
+                user.lastName = txt_LastName.Text;
+                user.type = cmb_TypeUser.Text;
+                user.email = txt_Email.Text;
+                user.phoneNumber = txt_PhoneNumber.Text;
+                user.location = cmb_Location.Text;
+                user.hashedPassword = Cryptography.GeneratePasswordHash(txt_Password.Text);
+                user.salt = Cryptography.getSalt();
+
+                uService.CreateUser(user);
+            }
+            else
+            {
+                MessageBox.Show("Not all fields are filled in", "Action failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
