@@ -40,6 +40,8 @@ namespace UI.Panels
                 user.salt = Cryptography.getSalt();
 
                 uService.CreateUser(user);
+
+                MessageBox.Show("The user has been created!", "Operation successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
