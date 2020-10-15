@@ -217,6 +217,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginScreen";
             this.Text = "LoginScreen";
             this.tableLayoutPanel1.ResumeLayout(false);

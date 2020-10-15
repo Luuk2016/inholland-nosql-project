@@ -9,10 +9,9 @@ namespace OtherFunctions
         /*
          * Generate a password hash with salt
          * @param string password - the users password
-         * @param string salt - the generated salt
          * @return string - the hashed password
-         */
-        public static string GeneratePasswordHash(string password, string salt)
+        */
+        public static string GeneratePasswordHash(string password)
         {
             // Create a new SHA256Managed object for later use
             SHA256Managed crypt = new SHA256Managed();
@@ -21,7 +20,7 @@ namespace OtherFunctions
             string hash = String.Empty;
 
             // Append the salt to the password
-            string toHash = password + salt;
+            string toHash = password + getSalt();
 
             // Hash the toHash string and store it in bytes in the crypto var
             byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
@@ -41,10 +40,19 @@ namespace OtherFunctions
          * @param string hash1 - the first hash
          * @param string hash2 - the second hash
          * @return bool - true if they are the same, otherwise false
-         */
+        */
         public static bool CompareHashes(string hash1, string hash2)
         {
             return hash1.Equals(hash2);
+        }
+
+        /*
+         * Get a salt to use with the hashing
+         * @return string - the salt
+        */
+        public static string getSalt()
+        {
+            return "427c78c8a0887b8a2a50a914cc654fd8dbd1a562da5d9bb4dfba480a77a5e32a";
         }
     }
 }
