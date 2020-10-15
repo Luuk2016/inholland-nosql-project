@@ -37,6 +37,7 @@ namespace UI
 
             //Subscribe login event to show main navigation
             loginPartial.btnLoginClick += LoggedIn;
+            mainNavigation.logoutHandler += LoggedOut;
 
             LoadPanels();
             ShowPanel(loginPartial);
@@ -45,6 +46,11 @@ namespace UI
         private void LoggedIn(object sender, EventArgs e)
         {
             ShowPanel(mainNavigation);
+        }
+
+        private void LoggedOut(object sender, EventArgs e)
+        {
+            ShowPanel(loginPartial);
         }
     }
 }
