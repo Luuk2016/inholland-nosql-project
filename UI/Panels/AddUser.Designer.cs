@@ -33,7 +33,6 @@
             this.pnl_CreateUser = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cmb_TypeUser = new System.Windows.Forms.ComboBox();
             this.cmb_Location = new System.Windows.Forms.ComboBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_PhoneNumber = new System.Windows.Forms.TextBox();
@@ -46,14 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbl_FirstNameWarning = new System.Windows.Forms.Label();
-            this.lbl_LastNameWarning = new System.Windows.Forms.Label();
-            this.lbl_TypeWarning = new System.Windows.Forms.Label();
-            this.lbl_PasswordWarning = new System.Windows.Forms.Label();
-            this.lbl_LocationWarning = new System.Windows.Forms.Label();
-            this.lbl_PhoneNumberWarning = new System.Windows.Forms.Label();
-            this.lbl_MailWarning = new System.Windows.Forms.Label();
-            this.btn_Check = new System.Windows.Forms.Button();
+            this.cmb_TypeUser = new System.Windows.Forms.ComboBox();
             this.pnl_CreateUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,17 +71,9 @@
             // 
             // pnl_CreateUser
             // 
-            this.pnl_CreateUser.Controls.Add(this.btn_Check);
-            this.pnl_CreateUser.Controls.Add(this.lbl_MailWarning);
-            this.pnl_CreateUser.Controls.Add(this.lbl_PhoneNumberWarning);
-            this.pnl_CreateUser.Controls.Add(this.lbl_LocationWarning);
-            this.pnl_CreateUser.Controls.Add(this.lbl_PasswordWarning);
-            this.pnl_CreateUser.Controls.Add(this.lbl_TypeWarning);
-            this.pnl_CreateUser.Controls.Add(this.lbl_LastNameWarning);
-            this.pnl_CreateUser.Controls.Add(this.lbl_FirstNameWarning);
+            this.pnl_CreateUser.Controls.Add(this.cmb_TypeUser);
             this.pnl_CreateUser.Controls.Add(this.btnAdd);
             this.pnl_CreateUser.Controls.Add(this.btnCancel);
-            this.pnl_CreateUser.Controls.Add(this.cmb_TypeUser);
             this.pnl_CreateUser.Controls.Add(this.cmb_Location);
             this.pnl_CreateUser.Controls.Add(this.txt_Password);
             this.pnl_CreateUser.Controls.Add(this.txt_PhoneNumber);
@@ -131,18 +115,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
-            // cmb_TypeUser
-            // 
-            this.cmb_TypeUser.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.cmb_TypeUser.FormattingEnabled = true;
-            this.cmb_TypeUser.Items.AddRange(new object[] {
-            "Employee",
-            "Manager"});
-            this.cmb_TypeUser.Location = new System.Drawing.Point(436, 299);
-            this.cmb_TypeUser.Name = "cmb_TypeUser";
-            this.cmb_TypeUser.Size = new System.Drawing.Size(359, 24);
-            this.cmb_TypeUser.TabIndex = 16;
-            // 
             // cmb_Location
             // 
             this.cmb_Location.FormattingEnabled = true;
@@ -160,6 +132,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(359, 22);
             this.txt_Password.TabIndex = 14;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // txt_PhoneNumber
             // 
@@ -249,85 +222,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Password:";
             // 
-            // lbl_FirstNameWarning
+            // cmb_TypeUser
             // 
-            this.lbl_FirstNameWarning.AutoSize = true;
-            this.lbl_FirstNameWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_FirstNameWarning.Location = new System.Drawing.Point(891, 176);
-            this.lbl_FirstNameWarning.Name = "lbl_FirstNameWarning";
-            this.lbl_FirstNameWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_FirstNameWarning.TabIndex = 19;
-            this.lbl_FirstNameWarning.Text = "Field must be filled!";
-            // 
-            // lbl_LastNameWarning
-            // 
-            this.lbl_LastNameWarning.AutoSize = true;
-            this.lbl_LastNameWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_LastNameWarning.Location = new System.Drawing.Point(891, 237);
-            this.lbl_LastNameWarning.Name = "lbl_LastNameWarning";
-            this.lbl_LastNameWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_LastNameWarning.TabIndex = 20;
-            this.lbl_LastNameWarning.Text = "Field must be filled!";
-            // 
-            // lbl_TypeWarning
-            // 
-            this.lbl_TypeWarning.AutoSize = true;
-            this.lbl_TypeWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_TypeWarning.Location = new System.Drawing.Point(891, 299);
-            this.lbl_TypeWarning.Name = "lbl_TypeWarning";
-            this.lbl_TypeWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_TypeWarning.TabIndex = 21;
-            this.lbl_TypeWarning.Text = "Field must be filled!";
-            // 
-            // lbl_PasswordWarning
-            // 
-            this.lbl_PasswordWarning.AutoSize = true;
-            this.lbl_PasswordWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_PasswordWarning.Location = new System.Drawing.Point(891, 545);
-            this.lbl_PasswordWarning.Name = "lbl_PasswordWarning";
-            this.lbl_PasswordWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_PasswordWarning.TabIndex = 22;
-            this.lbl_PasswordWarning.Text = "Field must be filled!";
-            // 
-            // lbl_LocationWarning
-            // 
-            this.lbl_LocationWarning.AutoSize = true;
-            this.lbl_LocationWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_LocationWarning.Location = new System.Drawing.Point(891, 484);
-            this.lbl_LocationWarning.Name = "lbl_LocationWarning";
-            this.lbl_LocationWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_LocationWarning.TabIndex = 23;
-            this.lbl_LocationWarning.Text = "Field must be filled!";
-            // 
-            // lbl_PhoneNumberWarning
-            // 
-            this.lbl_PhoneNumberWarning.AutoSize = true;
-            this.lbl_PhoneNumberWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_PhoneNumberWarning.Location = new System.Drawing.Point(891, 422);
-            this.lbl_PhoneNumberWarning.Name = "lbl_PhoneNumberWarning";
-            this.lbl_PhoneNumberWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_PhoneNumberWarning.TabIndex = 24;
-            this.lbl_PhoneNumberWarning.Text = "Field must be filled!";
-            // 
-            // lbl_MailWarning
-            // 
-            this.lbl_MailWarning.AutoSize = true;
-            this.lbl_MailWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_MailWarning.Location = new System.Drawing.Point(891, 360);
-            this.lbl_MailWarning.Name = "lbl_MailWarning";
-            this.lbl_MailWarning.Size = new System.Drawing.Size(128, 17);
-            this.lbl_MailWarning.TabIndex = 25;
-            this.lbl_MailWarning.Text = "Field must be filled!";
-            // 
-            // btn_Check
-            // 
-            this.btn_Check.Location = new System.Drawing.Point(436, 596);
-            this.btn_Check.Name = "btn_Check";
-            this.btn_Check.Size = new System.Drawing.Size(112, 37);
-            this.btn_Check.TabIndex = 26;
-            this.btn_Check.Text = "Check";
-            this.btn_Check.UseVisualStyleBackColor = true;
-            this.btn_Check.Click += new System.EventHandler(this.btn_Check_Click);
+            this.cmb_TypeUser.FormattingEnabled = true;
+            this.cmb_TypeUser.Items.AddRange(new object[] {
+            "Amsterdam",
+            "Haarlem"});
+            this.cmb_TypeUser.Location = new System.Drawing.Point(436, 299);
+            this.cmb_TypeUser.Name = "cmb_TypeUser";
+            this.cmb_TypeUser.Size = new System.Drawing.Size(359, 24);
+            this.cmb_TypeUser.TabIndex = 19;
             // 
             // AddUser
             // 
@@ -361,17 +265,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmb_TypeUser;
         private System.Windows.Forms.ComboBox cmb_Location;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lbl_MailWarning;
-        private System.Windows.Forms.Label lbl_PhoneNumberWarning;
-        private System.Windows.Forms.Label lbl_LocationWarning;
-        private System.Windows.Forms.Label lbl_PasswordWarning;
-        private System.Windows.Forms.Label lbl_TypeWarning;
-        private System.Windows.Forms.Label lbl_LastNameWarning;
-        private System.Windows.Forms.Label lbl_FirstNameWarning;
-        private System.Windows.Forms.Button btn_Check;
+        private System.Windows.Forms.ComboBox cmb_TypeUser;
     }
 }
