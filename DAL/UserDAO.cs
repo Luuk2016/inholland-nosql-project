@@ -33,7 +33,7 @@ namespace DAL
             string storedSalt = user.salt;
 
             // Generate the hash with the filled in password + stored salt
-            string inputPW = Cryptography.GeneratePasswordHash(password, storedSalt);
+            string inputPW = Cryptography.GeneratePasswordHash(password);
 
             // Compare the filled in (hashed) password with the hash stored in the database
             if (Cryptography.CompareHashes(inputPW, storedPW))
