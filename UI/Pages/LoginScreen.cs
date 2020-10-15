@@ -23,7 +23,7 @@ namespace UI.Pages
             uService = new UserService();
 
             // Disable/enable the login functionality (for debugging)
-            useLogin = false;
+            useLogin = true;
         }
 
         private void lblForgotPassword_MouseClick(object sender, MouseEventArgs e)
