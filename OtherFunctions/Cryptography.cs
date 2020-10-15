@@ -9,7 +9,7 @@ namespace OtherFunctions
         /*
          * Generate a password hash with salt
          * @param string password - the users password
-         * @param string hash2 - the generated salt
+         * @param string salt - the generated salt
          * @return string - the hashed password
          */
         public static string GeneratePasswordHash(string password, string salt)
