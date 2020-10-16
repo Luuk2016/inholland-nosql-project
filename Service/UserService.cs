@@ -37,9 +37,24 @@ namespace Service
             return userDAO.GetUserById(id);
         }
 
+        public UserModel GetUserByEmail(string email)
+        {
+            return userDAO.GetUserByEmail(email);
+        }
+
         public void DeleteUser(string id)
         {
             userDAO.DeleteUser(id);
+        }
+
+        public bool CheckIfUserExists(string email)
+        {
+            return userDAO.CheckIfUserExists(email);
+        }
+
+        public void CreatePasswordReset (PasswordResetModel passwordReset)
+        {
+            userDAO.CreatePasswordReset(passwordReset);
         }
     }
 }

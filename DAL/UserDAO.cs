@@ -66,6 +66,16 @@ namespace DAL
         }
 
         /*
+        * Get a user by email
+        * @param string email - the email of the user
+        * @return UserModel - the user
+        */
+        public UserModel GetUserByEmail(string email)
+        {
+            return GetRecordByKeyValue<UserModel>("users", "email", email);
+        }
+
+        /*
          * Get all users
          * @return List<UserModel> - all the users
          */
@@ -81,6 +91,42 @@ namespace DAL
         public void DeleteUser(string id)
         {
             DeleteRecordById<UserModel>("users", id);
+        }
+
+        /*
+        * Checks if a user exists
+        * @param string email - the email of the user
+        * @return bool - true or false
+        */
+        public bool CheckIfUserExists(string email)
+        {
+            bool exists = false;
+
+            if (GetUserByEmail(email) != null)
+            {
+                exists = true;
+            }
+
+            return exists; 
+        }
+
+        /*
+         * Creates a new passwordReset 
+         * @param PasswordResetModel passwordReset - the details about the reset request
+        */
+        public void CreatePasswordReset(PasswordResetModel passwordReset)
+        {
+            InsertRecord("password-resets", passwordReset);
+        }
+
+        /*
+         * Update the password of a user
+         * @param string id - the id of the user
+         * @param string newPassword - the new password
+        */
+        public void UpdatePasswordUser(string id, string newPassword)
+        {
+
         }
     }
 }
