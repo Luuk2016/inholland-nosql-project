@@ -27,9 +27,19 @@ namespace Service
             userDAO.CreateUser(user);
         }
 
+        public bool CheckIfUserExists(string email)
+        {
+            return userDAO.CheckIfUserExists(email);
+        }
+
         public List<UserModel> GetUsers()
         {
             return userDAO.GetUsers();
+        }
+
+        public void UpdateUser(UserModel user)
+        {
+            userDAO.UpdateUser(user);
         }
 
         public UserModel GetUserById(string id)
@@ -45,16 +55,6 @@ namespace Service
         public void DeleteUser(string id)
         {
             userDAO.DeleteUser(id);
-        }
-
-        public bool CheckIfUserExists(string email)
-        {
-            return userDAO.CheckIfUserExists(email);
-        }
-
-        public void CreatePasswordReset (PasswordResetModel passwordReset)
-        {
-            userDAO.CreatePasswordReset(passwordReset);
         }
     }
 }

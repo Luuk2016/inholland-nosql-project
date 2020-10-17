@@ -13,6 +13,7 @@ namespace UI.Pages
         public EventHandler btnForgotPasswordClick;
         public EventHandler btnLoginClick;
         private UserService uService;
+        private PasswordResetService pwrService;
         private bool useLogin;
 
         public LoginScreen()
@@ -79,7 +80,6 @@ namespace UI.Pages
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
             PasswordResetScreen resetScreen = new PasswordResetScreen();
-
             resetScreen.Show();
         }
 

@@ -59,9 +59,18 @@ namespace OtherFunctions
          * Generate a random 15 character token
          * @return string - the random token
         */
-        public static string GetToken()
+        public static string GetRandomToken()
         {
             return Guid.NewGuid().ToString("n").Substring(0, 15);
+        }
+
+        /*
+         * Generate an 8 character password
+         * @return string - the random token
+        */
+        public static string GetNewPassword()
+        {
+            return Guid.NewGuid().ToString("n").Substring(0, 8);
         }
     }
 }
