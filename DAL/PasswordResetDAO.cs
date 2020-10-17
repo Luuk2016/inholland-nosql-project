@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace DAL
 {
     public class PasswordResetDAO : MongoBase
     {
         /*
-        * Creates a new passwordReset 
-        * @param PasswordResetModel passwordReset - the details about the reset request
+         * Creates a new passwordReset 
+         * @param PasswordResetModel passwordReset - the details about the reset request
         */
         public void CreatePasswordReset(PasswordResetModel passwordReset)
         {
@@ -19,9 +21,43 @@ namespace DAL
         }
 
         /*
-        * Checkes if the the reset token is valid
-        * @param string token - the reset token
-        * @return bool - true if valid, false if not
+         * Send the reset token by email
+         * @param UserModel user - the user information
+         * @param string token - the reset token
+        */
+        public void MailResetToken(UserModel user, string token)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("NoDesk", "nodesk@luukkenselaar.nl"));
+            message.To.Add(new MailboxAddress($"{user.firstName} {user.lastName}", user.email));
+            message.Subject = "Your password reset token";
+
+            message.Body = new TextPart("plain")
+            {
+                Text = $@"Hey {user.firstName},
+
+Here you have your token that can be used to reset your password:
+Token: {token}
+
+-- NoDesk"
+            };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("mail.luukkenselaar.nl", 587, false);
+
+                // Note: only needed if the SMTP server requires authentication
+                client.Authenticate("nodesk@luukkenselaar.nl", "N4M0u3cS");
+
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
+
+        /*
+         * Checkes if the the reset token is valid
+         * @param string token - the reset token
+         * @return bool - true if valid, false if not
         */
         public bool CheckIfTheResetTokenIsValid(string token)
         {
@@ -39,6 +75,10 @@ namespace DAL
             return valid;
         }
 
+        /*
+         * Mark the reset token as used
+         * @param string token - the reset token
+        */
         public void MarkResetTokenAsUsed(string token)
         {
             // Get the PasswordReset data using the token
@@ -53,6 +93,10 @@ namespace DAL
             }
         }
 
+        /*
+         * Get the password reset information by the token
+         * @param string token - the reset token
+        */
         public PasswordResetModel GetPasswordReset(string token)
         {
             return GetRecordByKeyValue<PasswordResetModel>("password-resets", "token", token);

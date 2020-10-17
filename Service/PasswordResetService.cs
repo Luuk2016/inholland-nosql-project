@@ -22,6 +22,11 @@ namespace Service
             pwrDAO.CreatePasswordReset(passwordReset);
         }
 
+        public void MailResetToken(UserModel user, string token)
+        {
+            pwrDAO.MailResetToken(user, token);
+        }
+
         public bool CheckIfTheResetTokenIsValid(string token)
         {
             return pwrDAO.CheckIfTheResetTokenIsValid(token);

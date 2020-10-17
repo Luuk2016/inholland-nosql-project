@@ -32,24 +32,28 @@ namespace UI.Pages
             // Check if the field has been filled in
             if (txtEmail.Text != "")
             {
+                // Get the UserModel by using the email
+                UserModel user = uService.GetUserByEmail(txtEmail.Text);
+
                 // Check if the user exists
-                if (uService.CheckIfUserExists(txtEmail.Text))
+                if (user != null)
                 {
                     // Create a new object
                     PasswordResetModel passwordReset = new PasswordResetModel();
 
+                    // Get a reset token
+                    string resetToken = Cryptography.GetRandomToken();
+
                     // Set the details (user his email plus a random token)
                     passwordReset.email = txtEmail.Text;
-                    passwordReset.token = Cryptography.GetRandomToken();
+                    passwordReset.token = resetToken;
                     passwordReset.used = false;
 
                     // Create a new record in the database
                     pwrService.CreatePasswordReset(passwordReset);
 
                     // Mail the user his code
-
-
-
+                    pwrService.MailResetToken(user, resetToken);
                 }
 
                 // Show a messagebox
@@ -102,7 +106,8 @@ namespace UI.Pages
                         pwrService.MarkResetTokenAsUsed(txtToken.Text);
 
                         MessageBox.Show("Your new password has been set!", "Action succesful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtToken.Focus();
+
+                        this.Close();
                     }
                     else
                     {
