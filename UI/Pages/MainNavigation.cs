@@ -19,6 +19,7 @@ namespace UI.Pages
         TicketOverview ticketOverviewPartial = new TicketOverview();
         AddUser addUserPartial = new AddUser();
         AddIncidentTicket addIncidentTicketPartial = new AddIncidentTicket();
+        FAQ addFAQPartial = new FAQ();
 
         protected override List<BaseForm> FormPartials { get; set; }
         protected override TableLayoutPanel TableLayoutPanel { get; set; }
@@ -35,6 +36,7 @@ namespace UI.Pages
             FormPartials.Add(dashboardStatisticsPartial);
             FormPartials.Add(addUserPartial);
             FormPartials.Add(addIncidentTicketPartial);
+            FormPartials.Add(addFAQPartial);
 
             dashboardStatisticsPartial.btnShowListClick += HandleDashboardShowListClick;
 
@@ -88,6 +90,12 @@ namespace UI.Pages
         private void HandleAddUserCancelClick(object sender, EventArgs e)
         {
             ShowPanel(manageUsersPartial);
+        }
+
+        //FAQ
+        private void btn_FAQ_Click(object sender, EventArgs e)
+        {
+            ShowPanel(addFAQPartial);
         }
     }
 }
