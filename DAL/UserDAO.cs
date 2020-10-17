@@ -13,7 +13,7 @@ namespace DAL
          * @param string email - the filled in email
          * @param string password - the filled in password
          * @return UserModel user - object with user details
-         */
+        */
         public UserModel LoginUser(string email, string password)
         {
             // Create a filter that will get the user by email
@@ -49,7 +49,7 @@ namespace DAL
         /*
          * Create a new user
          * @param UserModel user - a UserModel object
-         */
+        */
         public void CreateUser(UserModel user)
         {
             InsertRecord("users", user);
@@ -59,28 +59,64 @@ namespace DAL
          * Get a user by ID
          * @param string id - the id of the user
          * @return UserModel - the user
-         */
+        */
         public UserModel GetUserById(string id)
         {
             return GetRecordById<UserModel>("users", id);
         }
 
         /*
+         * Get a user by email
+         * @param string email - the email of the user
+         * @return UserModel - the user
+        */
+        public UserModel GetUserByEmail(string email)
+        {
+            return GetRecordByKeyValue<UserModel>("users", "email", email);
+        }
+
+        /*
          * Get all users
          * @return List<UserModel> - all the users
-         */
+        */
         public List<UserModel> GetUsers()
         {
             return GetTable<UserModel>("users");
         }
 
         /*
-        * Delete a user
-        * @param string id - the id of the user
+         * Update the user
+         * @param UserModel user - the usermodel with the new information
+        */
+        public void UpdateUser(UserModel user)
+        {
+            UpdateRecord<UserModel>("users", user.id.ToString(), user);
+        }
+
+        /*
+         * Delete a user
+         * @param string id - the id of the user
         */
         public void DeleteUser(string id)
         {
             DeleteRecordById<UserModel>("users", id);
+        }
+
+        /*
+         * Checks if a user exists
+         * @param string email - the email of the user
+         * @return bool - true or false
+        */
+        public bool CheckIfUserExists(string email)
+        {
+            bool exists = false;
+
+            if (GetUserByEmail(email) != null)
+            {
+                exists = true;
+            }
+
+            return exists; 
         }
     }
 }

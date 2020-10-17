@@ -45,6 +45,21 @@ namespace DAL
         }
 
         /*
+        * Get a record of the specified table by key
+        * @param string table - the name of the table/collecton
+        * @param string key - the key (column)
+        * @param string value - the value
+        * @return T - an object of the specified type or NULL
+        */
+        public T GetRecordByKeyValue<T>(string table, string key, string value)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(key, value);
+
+            return collection.Find(filter).FirstOrDefault();
+        }
+
+        /*
         * Insert a new record in the specified table/collection
         * @param string table - the name of the table/collecton
         * @param T record - an object
@@ -79,6 +94,21 @@ namespace DAL
             var collection = db.GetCollection<T>(table);
 
             return collection.Find(filter).FirstOrDefault();
+        }
+
+        /*
+        * Update a record
+        * @param string table - the name of the table/collecton
+        * @param string id - the id of the record that should be updated
+        */
+        public void UpdateRecord<T>(string table, string id, T record)
+        {
+            var collection = db.GetCollection<T>(table);
+
+            var result = collection.ReplaceOne(
+                new BsonDocument("_id", ObjectId.Parse(id)),
+                record
+            );
         }
     }
 }

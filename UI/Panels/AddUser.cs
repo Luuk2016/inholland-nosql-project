@@ -37,7 +37,7 @@ namespace UI.Panels
                 user.phoneNumber = txt_PhoneNumber.Text;
                 user.location = cmb_Location.Text;
                 user.hashedPassword = Cryptography.GeneratePasswordHash(txt_Password.Text);
-                user.salt = Cryptography.getSalt();
+                user.salt = Cryptography.GetSalt();
 
                 uService.CreateUser(user);
 
