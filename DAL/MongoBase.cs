@@ -77,8 +77,13 @@ namespace DAL
         public T GetRecordByFilter<T>(string table, FilterDefinition<T> filter)
         {
             var collection = db.GetCollection<T>(table);
-
             return collection.Find(filter).FirstOrDefault();
+        }
+
+        public void InsertFaqQuestion<T>(string table, T record)
+        {
+            var collection = db.GetCollection<T>(table); 
+            collection.InsertOne(record);
         }
     }
 }

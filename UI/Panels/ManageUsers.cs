@@ -14,7 +14,6 @@ namespace UI.Pages
     public partial class ManageUsers : BaseForm
     {
         public EventHandler btnAddUserClick;
-        
 
         public ManageUsers()
         {
@@ -24,7 +23,6 @@ namespace UI.Pages
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             btnAddUserClick?.Invoke(sender, e);
-
         }
 
         private void txtbEmailFilter_TextChanged(object sender, EventArgs e)

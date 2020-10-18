@@ -12,9 +12,15 @@ namespace UI.Panels
 {
     public partial class FAQ : BaseForm
     {
+        public EventHandler btnAddQuestionClick;
         public FAQ()
         {
             InitializeComponent();
+        }
+
+        private void btnAddQuestion_Click(object sender, EventArgs e)
+        {
+            btnAddQuestionClick?.Invoke(sender, e);
         }
     }
 }
