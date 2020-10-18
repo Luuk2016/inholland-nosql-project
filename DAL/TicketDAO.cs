@@ -29,9 +29,9 @@ namespace DAL
             return GetTable<TicketModel>("tickets");
         }
 
-        //public void UpdateTicket(TicketModel ticket)
-        //{
-
-        //}
+        public void UpdateTicket(TicketModel ticket)
+        {
+            UpdateRecord<TicketModel>("tickets", ticket.id.ToString(), ticket);
+        }
     }
 }

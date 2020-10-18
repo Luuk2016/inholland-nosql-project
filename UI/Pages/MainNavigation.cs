@@ -88,7 +88,8 @@ namespace UI.Pages
 
         private void HandleShowTicketDetails(object sender, EventArgs e)
         {
-            TicketModel ticket = (TicketModel)sender;
+            TicketModel ticket = new TicketModel();
+            ticket = ticketOverviewPartial.ticket;
             ticketDetailsPartial.LoadDetails(ticket);
             ShowPanel(ticketDetailsPartial);
         }

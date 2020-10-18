@@ -80,5 +80,20 @@ namespace DAL
 
             return collection.Find(filter).FirstOrDefault();
         }
+
+        /*
+        * Update a record
+        * @param string table - the name of the table/collecton
+        * @param string id - the id of the record that should be updated
+        */
+        public void UpdateRecord<T>(string table, string id, T record)
+        {
+            var collection = db.GetCollection<T>(table);
+
+            var result = collection.ReplaceOne(
+                new BsonDocument("_id", ObjectId.Parse(id)),
+                record
+            );
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using UI.GlobalPage;
 using Service;
 using Model;
+using UI.Panels;
 
 namespace UI.Pages
 {
@@ -17,6 +18,7 @@ namespace UI.Pages
     {
         public EventHandler btnCreateTicketClick;
         public EventHandler ShowTicketDetails;
+        public TicketModel ticket;
         TicketService ticketService = new TicketService();
 
         public TicketOverview()
@@ -42,6 +44,7 @@ namespace UI.Pages
 
         private void TicketOverview_VisibleChanged(object sender, EventArgs e)
         {
+            lvTickets.Items.Clear();
             LoadLvTickets();
             txtbEmailFilter.Text = "Filter by Email";
         }
@@ -65,8 +68,7 @@ namespace UI.Pages
         private void lvTickets_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var id = lvTickets.SelectedItems[0].Text;
-            TicketModel ticket = ticketService.GetTicketById(id);
-            ticket = sender as TicketModel;
+            ticket = ticketService.GetTicketById(id);
             ShowTicketDetails?.Invoke(sender, e);
         }
     }

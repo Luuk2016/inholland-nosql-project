@@ -27,7 +27,7 @@ namespace UI.Panels
 
         public void LoadDetails(TicketModel ticket)
         {
-            _ticket = ticket; 
+            _ticket = ticket;
             lblDateTimeDetail.Text = _ticket.DateTimeReported.ToString();
             lblSubjectDetail.Text = _ticket.Subject;
             lblTypeDetail.Text = _ticket.Type.ToString();
@@ -40,7 +40,7 @@ namespace UI.Panels
         private void btnResolved_Click(object sender, EventArgs e)
         {
             _ticket.Status = "resolved";
-            //ticketService.UpdateTicket;
+            ticketService.UpdateTicket(_ticket);
             btnResolveTicketClick?.Invoke(sender, e);
         }
 

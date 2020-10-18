@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
+using OtherFunctions;
 
 namespace UI.Pages
 {
@@ -23,14 +24,16 @@ namespace UI.Pages
         public AddIncidentTicket()
         {
             InitializeComponent();
-            LoadBasics();
             ticketService = new TicketService();
         }
 
         private void LoadBasics()
         {
             cmbDate.Text = DateTime.Now.ToString();
-            //cmbUser.Text = 
+            if (Session.user != null)
+            {
+                cmbUser.Text = (OtherFunctions.Session.user.firstName + " " + OtherFunctions.Session.user.lastName);
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -53,8 +56,7 @@ namespace UI.Pages
                         ticket.Type = TicketType.service;
                         break;
                 }
-                //maybe change later
-                ticket.User.firstName = cmbUser.Text;
+                ticket.User = Session.user;
                 switch (cmbPriority.SelectedItem)
                 {
                     case 0:
@@ -100,6 +102,16 @@ namespace UI.Pages
         private void btnCancel_Click(object sender, EventArgs e)
         {
             btnCancelClick?.Invoke(sender, e);
+        }
+
+        private void AddIncidentTicket_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadBasics();
+        }
+
+        private void cmbUser_SelectedValueChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(cmbUser.SelectedIndex.ToString());
         }
     }
 }
