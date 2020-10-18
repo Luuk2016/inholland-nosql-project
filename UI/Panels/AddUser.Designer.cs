@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_CreateUser = new System.Windows.Forms.Panel();
+            this.cmb_TypeUser = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmb_Location = new System.Windows.Forms.ComboBox();
@@ -45,7 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmb_TypeUser = new System.Windows.Forms.ComboBox();
             this.pnl_CreateUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,17 @@
             this.pnl_CreateUser.Name = "pnl_CreateUser";
             this.pnl_CreateUser.Size = new System.Drawing.Size(1259, 847);
             this.pnl_CreateUser.TabIndex = 2;
+            // 
+            // cmb_TypeUser
+            // 
+            this.cmb_TypeUser.FormattingEnabled = true;
+            this.cmb_TypeUser.Items.AddRange(new object[] {
+            "Amsterdam",
+            "Haarlem"});
+            this.cmb_TypeUser.Location = new System.Drawing.Point(436, 299);
+            this.cmb_TypeUser.Name = "cmb_TypeUser";
+            this.cmb_TypeUser.Size = new System.Drawing.Size(359, 24);
+            this.cmb_TypeUser.TabIndex = 19;
             // 
             // btnAdd
             // 
@@ -221,17 +232,6 @@
             this.label3.Size = new System.Drawing.Size(140, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password:";
-            // 
-            // cmb_TypeUser
-            // 
-            this.cmb_TypeUser.FormattingEnabled = true;
-            this.cmb_TypeUser.Items.AddRange(new object[] {
-            "Amsterdam",
-            "Haarlem"});
-            this.cmb_TypeUser.Location = new System.Drawing.Point(436, 299);
-            this.cmb_TypeUser.Name = "cmb_TypeUser";
-            this.cmb_TypeUser.Size = new System.Drawing.Size(359, 24);
-            this.cmb_TypeUser.TabIndex = 19;
             // 
             // AddUser
             // 

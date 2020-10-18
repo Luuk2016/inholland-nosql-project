@@ -29,20 +29,26 @@
         private void InitializeComponent()
         {
             this.pnl_AddQuestions = new System.Windows.Forms.Panel();
-            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_SendFaqQuestion = new System.Windows.Forms.Button();
             this.rtb_AddFaqQuestion = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.cmb_Category = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rtb_AddFaqAnswer = new System.Windows.Forms.RichTextBox();
             this.pnl_AddQuestions.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_AddQuestions
             // 
             this.pnl_AddQuestions.BackColor = System.Drawing.SystemColors.Window;
+            this.pnl_AddQuestions.Controls.Add(this.rtb_AddFaqAnswer);
+            this.pnl_AddQuestions.Controls.Add(this.label4);
+            this.pnl_AddQuestions.Controls.Add(this.label3);
+            this.pnl_AddQuestions.Controls.Add(this.cmb_Category);
             this.pnl_AddQuestions.Controls.Add(this.btnCancel);
-            this.pnl_AddQuestions.Controls.Add(this.txt_Email);
             this.pnl_AddQuestions.Controls.Add(this.label2);
             this.pnl_AddQuestions.Controls.Add(this.btn_SendFaqQuestion);
             this.pnl_AddQuestions.Controls.Add(this.rtb_AddFaqQuestion);
@@ -52,12 +58,15 @@
             this.pnl_AddQuestions.Size = new System.Drawing.Size(1262, 785);
             this.pnl_AddQuestions.TabIndex = 0;
             // 
-            // txt_Email
+            // btnCancel
             // 
-            this.txt_Email.Location = new System.Drawing.Point(214, 191);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(287, 22);
-            this.txt_Email.TabIndex = 21;
+            this.btnCancel.Location = new System.Drawing.Point(75, 655);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(177, 63);
+            this.btnCancel.TabIndex = 22;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label2
             // 
@@ -65,15 +74,15 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(70, 184);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 29);
+            this.label2.Size = new System.Drawing.Size(131, 29);
             this.label2.TabIndex = 20;
-            this.label2.Text = "E-mail:";
+            this.label2.Text = "Category:";
             // 
             // btn_SendFaqQuestion
             // 
             this.btn_SendFaqQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_SendFaqQuestion.ForeColor = System.Drawing.Color.Black;
-            this.btn_SendFaqQuestion.Location = new System.Drawing.Point(809, 655);
+            this.btn_SendFaqQuestion.Location = new System.Drawing.Point(1021, 655);
             this.btn_SendFaqQuestion.Name = "btn_SendFaqQuestion";
             this.btn_SendFaqQuestion.Size = new System.Drawing.Size(177, 63);
             this.btn_SendFaqQuestion.TabIndex = 19;
@@ -83,9 +92,9 @@
             // 
             // rtb_AddFaqQuestion
             // 
-            this.rtb_AddFaqQuestion.Location = new System.Drawing.Point(73, 270);
+            this.rtb_AddFaqQuestion.Location = new System.Drawing.Point(75, 344);
             this.rtb_AddFaqQuestion.Name = "rtb_AddFaqQuestion";
-            this.rtb_AddFaqQuestion.Size = new System.Drawing.Size(913, 313);
+            this.rtb_AddFaqQuestion.Size = new System.Drawing.Size(517, 264);
             this.rtb_AddFaqQuestion.TabIndex = 1;
             this.rtb_AddFaqQuestion.Text = "";
             // 
@@ -99,15 +108,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add new question";
             // 
-            // btnCancel
+            // cmb_Category
             // 
-            this.btnCancel.Location = new System.Drawing.Point(75, 655);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(177, 63);
-            this.btnCancel.TabIndex = 22;
-            this.btnCancel.Text = "CANCEL";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cmb_Category.FormattingEnabled = true;
+            this.cmb_Category.Items.AddRange(new object[] {
+            "Hardware",
+            "Software",
+            "Overige"});
+            this.cmb_Category.Location = new System.Drawing.Point(207, 189);
+            this.cmb_Category.Name = "cmb_Category";
+            this.cmb_Category.Size = new System.Drawing.Size(271, 24);
+            this.cmb_Category.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(68, 298);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 29);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Question:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(687, 298);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 29);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Answer:";
+            // 
+            // rtb_AddFaqAnswer
+            // 
+            this.rtb_AddFaqAnswer.Location = new System.Drawing.Point(681, 344);
+            this.rtb_AddFaqAnswer.Name = "rtb_AddFaqAnswer";
+            this.rtb_AddFaqAnswer.Size = new System.Drawing.Size(517, 264);
+            this.rtb_AddFaqAnswer.TabIndex = 26;
+            this.rtb_AddFaqAnswer.Text = "";
             // 
             // AddQuestions
             // 
@@ -131,7 +171,10 @@
         private System.Windows.Forms.RichTextBox rtb_AddFaqQuestion;
         private System.Windows.Forms.Button btn_SendFaqQuestion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.RichTextBox rtb_AddFaqAnswer;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmb_Category;
     }
 }

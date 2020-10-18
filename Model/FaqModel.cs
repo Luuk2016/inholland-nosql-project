@@ -8,9 +8,10 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Model
 {
-    public class FaqModel
+    public class FaqModel 
     {
-        public string email { get; set; }
+        public string category { get; set; }
         public string faqQuestion { get; set; }
+        public string faqAnswer { get; set; }
     }
 }

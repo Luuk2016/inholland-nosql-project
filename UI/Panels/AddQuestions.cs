@@ -25,11 +25,12 @@ namespace UI.Panels
 
         private void btn_SendFaqQuestion_Click(object sender, EventArgs e)
         {
-            if(txt_Email.Text != "")
+            if(cmb_Category.Text != "" && rtb_AddFaqQuestion.Text != "" && rtb_AddFaqAnswer.Text != "")
             {
                 FaqModel faq = new FaqModel();
-                faq.email = txt_Email.Text;
+                faq.category = cmb_Category.Text;
                 faq.faqQuestion = rtb_AddFaqQuestion.Text;
+                faq.faqAnswer = rtb_AddFaqAnswer.Text;
                 uService.SendFaqQuestion(faq);
             }
             else
