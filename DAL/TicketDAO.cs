@@ -28,5 +28,10 @@ namespace DAL
         {
             return GetTable<TicketModel>("tickets");
         }
+
+        //public void UpdateTicket(TicketModel ticket)
+        //{
+
+        //}
     }
 }

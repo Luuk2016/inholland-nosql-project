@@ -17,12 +17,20 @@ namespace UI.Pages
     public partial class AddIncidentTicket : BaseForm
     {
         public EventHandler btnCancelClick;
+        public EventHandler btnSubmitClick;
         private TicketService ticketService;
         UserModel user = new UserModel();
         public AddIncidentTicket()
         {
             InitializeComponent();
+            LoadBasics();
             ticketService = new TicketService();
+        }
+
+        private void LoadBasics()
+        {
+            cmbDate.Text = DateTime.Now.ToString();
+            //cmbUser.Text = 
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -35,13 +43,13 @@ namespace UI.Pages
                 ticket.Subject = txtbSubject.Text;
                 switch (cmbType.SelectedItem)
                 {
-                    case 1:
+                    case 0:
                         ticket.Type = TicketType.software;
                         break;
-                    case 2:
+                    case 1:
                         ticket.Type = TicketType.hardware;
                         break;
-                    case 3:
+                    case 2:
                         ticket.Type = TicketType.service;
                         break;
                 }
@@ -49,36 +57,39 @@ namespace UI.Pages
                 ticket.User.firstName = cmbUser.Text;
                 switch (cmbPriority.SelectedItem)
                 {
-                    case 1:
+                    case 0:
                         ticket.Priority = TicketPriority.low;
                         break;
-                    case 2:
+                    case 1:
                         ticket.Priority = TicketPriority.normal;
                         break;
-                    case 3:
+                    case 2:
                         ticket.Priority = TicketPriority.high;
                         break;
                 }
                 switch (cmbDeadline.SelectedItem)
                 {
-                    case 1:
+                    case 0:
                         ticket.Deadline = ticket.DateTimeReported.AddDays(7);
                         break;
-                    case 2:
+                    case 1:
                         ticket.Deadline = ticket.DateTimeReported.AddDays(14);
                         break;
-                    case 3:
+                    case 2:
                         ticket.Deadline = ticket.DateTimeReported.AddDays(28);
                         break;
-                    case 4:
+                    case 3:
                         ticket.Deadline = ticket.DateTimeReported.AddMonths(6);
                         break;
                 }
                 ticket.Description = txtbDescription.Text;
+                ticket.Status = "unresolved";
 
                 ticketService.CreateTicket(ticket);
 
                 MessageBox.Show("The ticket has been created!", "Operation successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnSubmitClick?.Invoke(sender, e);
             }
             else
             {

@@ -32,6 +32,11 @@ namespace Service
             return ticketDAO.GetTicketById(id);
         }
 
+        //public void UpdateTicket(TicketModel ticket)
+        //{
+        //    ticketDAO.UpdateTicket(ticket);
+        //}
+
         public void DeleteTicket(string id)
         {
             ticketDAO.DeleteTicket(id);

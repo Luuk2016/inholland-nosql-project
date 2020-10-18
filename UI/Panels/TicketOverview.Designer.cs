@@ -136,6 +136,7 @@
             this.lvTickets.TabIndex = 2;
             this.lvTickets.UseCompatibleStateImageBehavior = false;
             this.lvTickets.View = System.Windows.Forms.View.Details;
+            this.lvTickets.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTickets_MouseDoubleClick);
             // 
             // clmID
             // 

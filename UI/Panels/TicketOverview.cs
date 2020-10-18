@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
 using Service;
+using Model;
 
 namespace UI.Pages
 {
     public partial class TicketOverview : BaseForm
     {
         public EventHandler btnCreateTicketClick;
+        public EventHandler ShowTicketDetails;
         TicketService ticketService = new TicketService();
 
         public TicketOverview()
@@ -41,6 +43,7 @@ namespace UI.Pages
         private void TicketOverview_VisibleChanged(object sender, EventArgs e)
         {
             LoadLvTickets();
+            txtbEmailFilter.Text = "Filter by Email";
         }
 
         private void LoadLvTickets()
@@ -57,6 +60,14 @@ namespace UI.Pages
 
                 lvTickets.Items.Add(item);
             }
+        }
+
+        private void lvTickets_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = lvTickets.SelectedItems[0].Text;
+            TicketModel ticket = ticketService.GetTicketById(id);
+            ticket = sender as TicketModel;
+            ShowTicketDetails?.Invoke(sender, e);
         }
     }
 }
