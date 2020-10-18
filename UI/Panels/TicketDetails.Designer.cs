@@ -331,6 +331,7 @@
             // 
             // txtbDescription
             // 
+            this.txtbDescription.Enabled = false;
             this.txtbDescription.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbDescription.Location = new System.Drawing.Point(211, 3);
             this.txtbDescription.Multiline = true;

@@ -32,11 +32,6 @@ namespace UI.Pages
             btnCreateTicketClick?.Invoke(sender, e);
         }
 
-        private void txtbEmailFilter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtbEmailFilter_MouseClick(object sender, MouseEventArgs e)
         {
             txtbEmailFilter.Clear();
@@ -46,7 +41,7 @@ namespace UI.Pages
         {
             lvTickets.Items.Clear();
             LoadLvTickets();
-            txtbEmailFilter.Text = "Filter by Email";
+            txtbEmailFilter.Text = "Filter by name";
         }
 
         private void LoadLvTickets()
@@ -70,6 +65,29 @@ namespace UI.Pages
             var id = lvTickets.SelectedItems[0].Text;
             ticket = ticketService.GetTicketById(id);
             ShowTicketDetails?.Invoke(sender, e);
+        }
+
+        private void txtbEmailFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                lvTickets.Items.Clear();
+                List<TicketModel> ticketList = ticketService.GetTickets();
+
+                foreach(var ticket in ticketList)
+                {
+                    if(ticket.User.firstName.ToLower() == txtbEmailFilter.Text.ToLower())
+                    {
+                        ListViewItem item = new ListViewItem(ticket.id.ToString());
+                        item.SubItems.Add(ticket.Subject);
+                        item.SubItems.Add(ticket.User.firstName);
+                        item.SubItems.Add(ticket.DateTimeReported.ToString());
+                        item.SubItems.Add(ticket.Status);
+
+                        lvTickets.Items.Add(item);
+                    }
+                }
+            }
         }
     }
 }

@@ -57,7 +57,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(962, 716);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(989, 739);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lblTitle
@@ -65,7 +65,7 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(3, 10);
+            this.lblTitle.Location = new System.Drawing.Point(3, 11);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(361, 51);
             this.lblTitle.TabIndex = 0;
@@ -79,11 +79,11 @@
             this.tableLayoutPanel2.Controls.Add(this.txtbEmailFilter, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCreateTicket, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 74);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 76);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(956, 65);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(983, 67);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtbEmailFilter
@@ -93,11 +93,11 @@
             this.txtbEmailFilter.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtbEmailFilter.Location = new System.Drawing.Point(3, 3);
             this.txtbEmailFilter.Name = "txtbEmailFilter";
-            this.txtbEmailFilter.Size = new System.Drawing.Size(431, 30);
+            this.txtbEmailFilter.Size = new System.Drawing.Size(444, 30);
             this.txtbEmailFilter.TabIndex = 0;
-            this.txtbEmailFilter.Text = "Filter by email";
+            this.txtbEmailFilter.Text = "Filter by name";
             this.txtbEmailFilter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbEmailFilter_MouseClick);
-            this.txtbEmailFilter.TextChanged += new System.EventHandler(this.txtbEmailFilter_TextChanged);
+            this.txtbEmailFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEmailFilter_KeyDown);
             // 
             // btnCreateTicket
             // 
@@ -106,7 +106,7 @@
             this.btnCreateTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateTicket.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateTicket.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCreateTicket.Location = new System.Drawing.Point(787, 3);
+            this.btnCreateTicket.Location = new System.Drawing.Point(814, 3);
             this.btnCreateTicket.Name = "btnCreateTicket";
             this.btnCreateTicket.Size = new System.Drawing.Size(166, 47);
             this.btnCreateTicket.TabIndex = 1;
@@ -129,9 +129,9 @@
             this.lvTickets.FullRowSelect = true;
             this.lvTickets.GridLines = true;
             this.lvTickets.HideSelection = false;
-            this.lvTickets.Location = new System.Drawing.Point(3, 145);
+            this.lvTickets.Location = new System.Drawing.Point(3, 149);
             this.lvTickets.Name = "lvTickets";
-            this.lvTickets.Size = new System.Drawing.Size(956, 568);
+            this.lvTickets.Size = new System.Drawing.Size(983, 587);
             this.lvTickets.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lvTickets.TabIndex = 2;
             this.lvTickets.UseCompatibleStateImageBehavior = false;
@@ -167,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(962, 716);
+            this.ClientSize = new System.Drawing.Size(989, 739);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TicketOverview";
