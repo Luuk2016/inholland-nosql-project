@@ -49,18 +49,28 @@ namespace UI.Pages
         {
             if (e.KeyCode == Keys.Enter)
             {
-                lvUsers.Items.Clear();
+                if (txtbEmailFilter.Text != "")
+                {
+                    lvUsers.Items.Clear();
 
-                string searchEmail = txtbEmailFilter.Text;
+                    string searchEmail = txtbEmailFilter.Text;
 
-                UserModel user = uService.GetUserByEmail(searchEmail);
+                    UserModel user = uService.GetUserByEmail(searchEmail);
 
-                ListViewItem lvi = new ListViewItem(user.id.ToString());
-                lvi.SubItems.Add(user.email);
-                lvi.SubItems.Add(user.firstName);
-                lvi.SubItems.Add(user.lastName);
-                lvi.SubItems.Add("#");
-                lvUsers.Items.Add(lvi);
+                    if (user != null)
+                    {
+                        ListViewItem lvi = new ListViewItem(user.id.ToString());
+                        lvi.SubItems.Add(user.email);
+                        lvi.SubItems.Add(user.firstName);
+                        lvi.SubItems.Add(user.lastName);
+                        lvi.SubItems.Add("#");
+                        lvUsers.Items.Add(lvi);
+                    }
+                }
+                else
+                {
+                    LoadUsersFromDB();
+                }
             }
         }
 
