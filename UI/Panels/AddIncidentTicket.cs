@@ -20,7 +20,7 @@ namespace UI.Pages
         public EventHandler btnCancelClick;
         public EventHandler btnSubmitClick;
         private TicketService ticketService;
-        UserModel user = new UserModel();
+
         public AddIncidentTicket()
         {
             InitializeComponent();
