@@ -52,13 +52,12 @@
             this.tableLayoutPanel1.Controls.Add(this.lvUsers, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1283, 881);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(962, 716);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTitle
@@ -66,10 +65,9 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(4, 12);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(3, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(491, 63);
+            this.lblTitle.Size = new System.Drawing.Size(393, 51);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "User Management";
             // 
@@ -81,12 +79,11 @@
             this.tableLayoutPanel2.Controls.Add(this.txtbEmailFilter, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnAddUser, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 92);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 74);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1275, 80);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(956, 65);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtbEmailFilter
@@ -94,14 +91,13 @@
             this.txtbEmailFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtbEmailFilter.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbEmailFilter.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtbEmailFilter.Location = new System.Drawing.Point(4, 4);
-            this.txtbEmailFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbEmailFilter.Location = new System.Drawing.Point(3, 3);
             this.txtbEmailFilter.Name = "txtbEmailFilter";
-            this.txtbEmailFilter.Size = new System.Drawing.Size(576, 36);
+            this.txtbEmailFilter.Size = new System.Drawing.Size(431, 30);
             this.txtbEmailFilter.TabIndex = 0;
-            this.txtbEmailFilter.Text = "Filter by email";
+            this.txtbEmailFilter.Text = "Enter the email and press enter";
             this.txtbEmailFilter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbEmailFilter_MouseClick);
-            this.txtbEmailFilter.TextChanged += new System.EventHandler(this.txtbEmailFilter_TextChanged);
+            this.txtbEmailFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEmailFilter_KeyDown);
             // 
             // btnAddUser
             // 
@@ -109,10 +105,9 @@
             this.btnAddUser.BackColor = System.Drawing.Color.GreenYellow;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddUser.Location = new System.Drawing.Point(1050, 4);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddUser.Location = new System.Drawing.Point(787, 3);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(221, 58);
+            this.btnAddUser.Size = new System.Drawing.Size(166, 47);
             this.btnAddUser.TabIndex = 1;
             this.btnAddUser.Text = "+ ADD NEW USER";
             this.btnAddUser.UseVisualStyleBackColor = false;
@@ -133,10 +128,9 @@
             this.lvUsers.FullRowSelect = true;
             this.lvUsers.GridLines = true;
             this.lvUsers.HideSelection = false;
-            this.lvUsers.Location = new System.Drawing.Point(4, 180);
-            this.lvUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.lvUsers.Location = new System.Drawing.Point(3, 145);
             this.lvUsers.Name = "lvUsers";
-            this.lvUsers.Size = new System.Drawing.Size(1275, 697);
+            this.lvUsers.Size = new System.Drawing.Size(956, 568);
             this.lvUsers.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lvUsers.TabIndex = 2;
             this.lvUsers.UseCompatibleStateImageBehavior = false;
@@ -168,10 +162,10 @@
             // 
             // ManageUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1283, 881);
+            this.ClientSize = new System.Drawing.Size(962, 716);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManageUsers";

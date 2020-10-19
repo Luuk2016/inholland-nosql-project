@@ -20,7 +20,7 @@ namespace OtherFunctions
             string hash = String.Empty;
 
             // Append the salt to the password
-            string toHash = password + getSalt();
+            string toHash = password + GetSalt();
 
             // Hash the toHash string and store it in bytes in the crypto var
             byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
@@ -50,9 +50,27 @@ namespace OtherFunctions
          * Get a salt to use with the hashing
          * @return string - the salt
         */
-        public static string getSalt()
+        public static string GetSalt()
         {
             return "427c78c8a0887b8a2a50a914cc654fd8dbd1a562da5d9bb4dfba480a77a5e32a";
+        }
+
+        /*
+         * Generate a random 15 character token
+         * @return string - the random token
+        */
+        public static string GetRandomToken()
+        {
+            return Guid.NewGuid().ToString("n").Substring(0, 15);
+        }
+
+        /*
+         * Generate an 8 character password
+         * @return string - the random token
+        */
+        public static string GetNewPassword()
+        {
+            return Guid.NewGuid().ToString("n").Substring(0, 8);
         }
     }
 }

@@ -121,6 +121,11 @@
     </Compile>
     <Compile Include="Panels\TicketDetails.Designer.cs">
       <DependentUpon>TicketDetails.cs</DependentUpon>
+    <Compile Include="Pages\PasswordResetScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PasswordResetScreen.Designer.cs">
+      <DependentUpon>PasswordResetScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="TGGUI.cs">
       <SubType>Form</SubType>
@@ -180,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MainNavigation.resx">
       <DependentUpon>MainNavigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PasswordResetScreen.resx">
+      <DependentUpon>PasswordResetScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\AddIncidentTicket.resx">
       <DependentUpon>AddIncidentTicket.cs</DependentUpon>
