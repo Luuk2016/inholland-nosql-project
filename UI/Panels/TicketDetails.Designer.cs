@@ -52,12 +52,12 @@
             this.txtbDescription = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnResolved = new System.Windows.Forms.Button();
             this.btnCancelEdit = new System.Windows.Forms.Button();
+            this.btnResolved = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -386,6 +386,34 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(886, 83);
             this.tableLayoutPanel9.TabIndex = 9;
             // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelEdit.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelEdit.Location = new System.Drawing.Point(3, 3);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(141, 57);
+            this.btnCancelEdit.TabIndex = 4;
+            this.btnCancelEdit.Text = "CANCEL EDIT";
+            this.btnCancelEdit.UseVisualStyleBackColor = false;
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            // 
+            // btnResolved
+            // 
+            this.btnResolved.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnResolved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResolved.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResolved.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnResolved.Location = new System.Drawing.Point(591, 3);
+            this.btnResolved.Name = "btnResolved";
+            this.btnResolved.Size = new System.Drawing.Size(141, 57);
+            this.btnResolved.TabIndex = 1;
+            this.btnResolved.Text = "RESOLVE TICKET";
+            this.btnResolved.UseVisualStyleBackColor = false;
+            this.btnResolved.Click += new System.EventHandler(this.btnResolved_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -397,20 +425,7 @@
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.BackColor = System.Drawing.Color.Moccasin;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(444, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(141, 57);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "EDIT TICKET";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -428,33 +443,6 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnResolved
-            // 
-            this.btnResolved.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnResolved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResolved.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResolved.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnResolved.Location = new System.Drawing.Point(591, 3);
-            this.btnResolved.Name = "btnResolved";
-            this.btnResolved.Size = new System.Drawing.Size(141, 57);
-            this.btnResolved.TabIndex = 1;
-            this.btnResolved.Text = "RESOLVE TICKET";
-            this.btnResolved.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelEdit
-            // 
-            this.btnCancelEdit.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelEdit.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelEdit.Location = new System.Drawing.Point(3, 3);
-            this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(141, 57);
-            this.btnCancelEdit.TabIndex = 4;
-            this.btnCancelEdit.Text = "CANCEL EDIT";
-            this.btnCancelEdit.UseVisualStyleBackColor = false;
-            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
-            // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.Green;
@@ -468,6 +456,20 @@
             this.btnConfirm.Text = "CONFIRM";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.Moccasin;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(444, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(141, 57);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "EDIT TICKET";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // TicketDetails
             // 

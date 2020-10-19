@@ -48,6 +48,7 @@ namespace UI.Pages
             //ticketmanagement
             ticketDetailsPartial.btnCancelClick += HandleIncidentTicketCancelClick;
             ticketDetailsPartial.btnResolveTicketClick += HandleResolveTicketClick;
+            ticketDetailsPartial.btnDeleteClick += HandleDeleteTicketClick;
             ticketOverviewPartial.btnCreateTicketClick += HandleCreateTicketClick;
             ticketOverviewPartial.ShowTicketDetails += HandleShowTicketDetails;
             addIncidentTicketPartial.btnCancelClick += HandleIncidentTicketCancelClick;
@@ -72,6 +73,11 @@ namespace UI.Pages
         }
 
         //ticketmanagement
+        private void HandleDeleteTicketClick(object sender, EventArgs e)
+        {
+            ShowPanel(ticketOverviewPartial);
+        }
+
         private void HandleResolveTicketClick(object sender, EventArgs e)
         {
             ShowPanel(ticketOverviewPartial);

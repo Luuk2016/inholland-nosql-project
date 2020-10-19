@@ -29,10 +29,15 @@ namespace UI.Pages
 
         private void LoadBasics()
         {
+            txtbDescription.Text = null;
+            txtbSubject.Text = null;
+            cmbDeadline.Text = null;
+            cmbPriority.Text = null;
+            cmbType.Text = null;
             cmbDate.Text = DateTime.Now.ToString();
             if (Session.user != null)
             {
-                cmbUser.Text = (OtherFunctions.Session.user.firstName + " " + OtherFunctions.Session.user.lastName);
+                cmbUser.Text = (Session.user.firstName + " " + Session.user.lastName);
             }
         }
 
@@ -44,7 +49,7 @@ namespace UI.Pages
 
                 ticket.DateTimeReported = DateTime.Now;
                 ticket.Subject = txtbSubject.Text;
-                switch (cmbType.SelectedItem)
+                switch (cmbType.SelectedIndex)
                 {
                     case 0:
                         ticket.Type = TicketType.software;
@@ -57,7 +62,7 @@ namespace UI.Pages
                         break;
                 }
                 ticket.User = Session.user;
-                switch (cmbPriority.SelectedItem)
+                switch (cmbPriority.SelectedIndex)
                 {
                     case 0:
                         ticket.Priority = TicketPriority.low;
@@ -69,19 +74,19 @@ namespace UI.Pages
                         ticket.Priority = TicketPriority.high;
                         break;
                 }
-                switch (cmbDeadline.SelectedItem)
+                switch (cmbDeadline.SelectedIndex)
                 {
                     case 0:
-                        ticket.Deadline = ticket.DateTimeReported.AddDays(7);
+                        ticket.Deadline = DateTime.Now.AddDays(7);
                         break;
                     case 1:
-                        ticket.Deadline = ticket.DateTimeReported.AddDays(14);
+                        ticket.Deadline = DateTime.Now.AddDays(14);
                         break;
                     case 2:
-                        ticket.Deadline = ticket.DateTimeReported.AddDays(28);
+                        ticket.Deadline = DateTime.Now.AddDays(28);
                         break;
                     case 3:
-                        ticket.Deadline = ticket.DateTimeReported.AddMonths(6);
+                        ticket.Deadline = DateTime.Now.AddMonths(6);
                         break;
                 }
                 ticket.Description = txtbDescription.Text;

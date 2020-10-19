@@ -19,14 +19,28 @@ namespace UI.Panels
     {
         public EventHandler btnResolveTicketClick;
         public EventHandler btnCancelClick;
+        public EventHandler btnDeleteClick;
         
         private TicketService ticketService = new TicketService();
         private TicketModel _ticket;
+
+        private UserService userService = new UserService();
         public TicketDetails()
         {
             InitializeComponent();
             btnCancelEdit.Hide();
             btnConfirm.Hide();
+        }
+
+        private void LoadUsers()
+        {
+            cmbUser.Items.Clear();
+            List<UserModel> users = userService.GetUsers();
+
+            foreach(var user in users)
+            {
+                cmbUser.Items.Add(user.firstName + " " + user.lastName);
+            }
         }
 
         public void LoadDetails(TicketModel ticket)
@@ -39,6 +53,8 @@ namespace UI.Panels
             cmbPriority.Text = _ticket.Priority.ToString();
             cmbDeadline.Text = _ticket.Deadline.ToString();
             txtbDescription.Text = _ticket.Description;
+
+            LoadUsers();
 
             cmbDate.Enabled = false;
             txtbSubject.Enabled = false;
@@ -80,7 +96,7 @@ namespace UI.Panels
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            switch (cmbType.SelectedItem)
+            switch (cmbType.SelectedIndex)
             {
                 case 0: 
                     _ticket.Type = TicketType.software;
@@ -93,7 +109,7 @@ namespace UI.Panels
                     break;
             }
             _ticket.User = Session.user;
-            switch (cmbPriority.SelectedItem)
+            switch (cmbPriority.SelectedIndex)
             {
                 case 0:
                     _ticket.Priority = TicketPriority.low;
@@ -105,7 +121,7 @@ namespace UI.Panels
                     _ticket.Priority = TicketPriority.high;
                     break;
             }
-            switch (cmbDeadline.SelectedItem)
+            switch (cmbDeadline.SelectedIndex)
             {
                 case 0:
                     _ticket.Deadline = _ticket.DateTimeReported.AddDays(7);
@@ -146,12 +162,15 @@ namespace UI.Panels
             btnResolved.Show();
             btnDelete.Show();
             btnEdit.Show();
+
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ticketService.DeleteTicket(_ticket.id.ToString());
-            MessageBox.Show("Ticket " + _ticket.id.ToString() + "successfully deleted.", "Operation successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Ticket " + _ticket.id.ToString() + " successfully deleted.", "Operation successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDeleteClick?.Invoke(sender, e);
         }
     }
 }

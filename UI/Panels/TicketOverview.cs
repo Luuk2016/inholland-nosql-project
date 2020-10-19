@@ -62,30 +62,40 @@ namespace UI.Pages
 
         private void lvTickets_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var id = lvTickets.SelectedItems[0].Text;
-            ticket = ticketService.GetTicketById(id);
-            ShowTicketDetails?.Invoke(sender, e);
+            if(lvTickets.SelectedItems[0].Text != null)
+            {
+                var id = lvTickets.SelectedItems[0].Text;
+                ticket = ticketService.GetTicketById(id);
+                ShowTicketDetails?.Invoke(sender, e);
+            }
         }
 
         private void txtbEmailFilter_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                lvTickets.Items.Clear();
-                List<TicketModel> ticketList = ticketService.GetTickets();
-
-                foreach(var ticket in ticketList)
+                if(txtbEmailFilter.Text != null || txtbEmailFilter.Text != " ")
                 {
-                    if(ticket.User.firstName.ToLower() == txtbEmailFilter.Text.ToLower())
-                    {
-                        ListViewItem item = new ListViewItem(ticket.id.ToString());
-                        item.SubItems.Add(ticket.Subject);
-                        item.SubItems.Add(ticket.User.firstName);
-                        item.SubItems.Add(ticket.DateTimeReported.ToString());
-                        item.SubItems.Add(ticket.Status);
+                    lvTickets.Items.Clear();
+                    List<TicketModel> ticketList = ticketService.GetTickets();
 
-                        lvTickets.Items.Add(item);
+                    foreach (var ticket in ticketList)
+                    {
+                        if (ticket.User.firstName.ToLower() == txtbEmailFilter.Text.ToLower())
+                        {
+                            ListViewItem item = new ListViewItem(ticket.id.ToString());
+                            item.SubItems.Add(ticket.Subject);
+                            item.SubItems.Add(ticket.User.firstName);
+                            item.SubItems.Add(ticket.DateTimeReported.ToString());
+                            item.SubItems.Add(ticket.Status);
+
+                            lvTickets.Items.Add(item);
+                        }
                     }
+                }
+                else
+                {
+                    LoadLvTickets();
                 }
             }
         }
