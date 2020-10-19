@@ -160,7 +160,7 @@
             // clmStatus
             // 
             this.clmStatus.Text = "Status";
-            this.clmStatus.Width = 80;
+            this.clmStatus.Width = 109;
             // 
             // TicketOverview
             // 

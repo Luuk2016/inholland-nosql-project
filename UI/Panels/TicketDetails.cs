@@ -39,7 +39,7 @@ namespace UI.Panels
 
             foreach(var user in users)
             {
-                cmbUser.Items.Add(user.firstName + " " + user.lastName);
+                cmbUser.Items.Add(user.firstName);
             }
         }
 
@@ -63,6 +63,11 @@ namespace UI.Panels
             cmbPriority.Enabled = false;
             cmbDeadline.Enabled = false;
             txtbDescription.Enabled = false;
+
+            if (_ticket.Status == "resolved")
+            {
+                btnResolved.Enabled = false;
+            }
         }
 
         private void btnResolved_Click(object sender, EventArgs e)
@@ -96,6 +101,7 @@ namespace UI.Panels
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            List<UserModel> users = userService.GetUsers();
             switch (cmbType.SelectedIndex)
             {
                 case 0: 
@@ -108,7 +114,17 @@ namespace UI.Panels
                     _ticket.Type = TicketType.service;
                     break;
             }
-            _ticket.User = Session.user;
+            foreach (var user in users)
+            {
+                if (user.firstName == cmbUser.Text)
+                {
+                    _ticket.User = user;
+                }
+                else
+                {
+                    _ticket.User = Session.user;
+                }
+            }
             switch (cmbPriority.SelectedIndex)
             {
                 case 0:
