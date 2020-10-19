@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
 using Service;
 using Model;
-using UI.Panels;
 
 namespace UI.Pages
 {
@@ -19,11 +12,15 @@ namespace UI.Pages
         public EventHandler btnCreateTicketClick;
         public EventHandler ShowTicketDetails;
         public TicketModel ticket;
-        TicketService ticketService = new TicketService();
+
+        TicketService tService;
 
         public TicketOverview()
         {
             InitializeComponent();
+
+            tService = new TicketService();
+
             LoadLvTickets();
         }
 
@@ -46,7 +43,7 @@ namespace UI.Pages
 
         private void LoadLvTickets()
         {
-            var tickets = ticketService.GetTickets();
+            var tickets = tService.GetTickets();
 
             foreach (var ticket in tickets)
             {
@@ -65,7 +62,7 @@ namespace UI.Pages
             if(lvTickets.SelectedItems[0].Text != null)
             {
                 var id = lvTickets.SelectedItems[0].Text;
-                ticket = ticketService.GetTicketById(id);
+                ticket = tService.GetTicketById(id);
                 ShowTicketDetails?.Invoke(sender, e);
             }
         }
@@ -77,7 +74,7 @@ namespace UI.Pages
                 if(txtbEmailFilter.Text != "")
                 {
                     lvTickets.Items.Clear();
-                    List<TicketModel> ticketList = ticketService.GetTickets();
+                    List<TicketModel> ticketList = tService.GetTickets();
 
                     foreach (var ticket in ticketList)
                     {

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
 using Service;
@@ -21,13 +15,18 @@ namespace UI.Panels
         public EventHandler btnCancelClick;
         public EventHandler btnDeleteClick;
         
-        private TicketService ticketService = new TicketService();
+        private TicketService tService;
         private TicketModel _ticket;
 
-        private UserService userService = new UserService();
+        private UserService uService;
+
         public TicketDetails()
         {
             InitializeComponent();
+
+            tService = new TicketService();
+            uService = new UserService();
+
             btnCancelEdit.Hide();
             btnConfirm.Hide();
         }
@@ -35,7 +34,7 @@ namespace UI.Panels
         private void LoadUsers()
         {
             cmbUser.Items.Clear();
-            List<UserModel> users = userService.GetUsers();
+            List<UserModel> users = uService.GetUsers();
 
             foreach(var user in users)
             {
@@ -73,7 +72,7 @@ namespace UI.Panels
         private void btnResolved_Click(object sender, EventArgs e)
         {
             _ticket.Status = "resolved";
-            ticketService.UpdateTicket(_ticket);
+            tService.UpdateTicket(_ticket);
             btnResolveTicketClick?.Invoke(sender, e);
         }
 
@@ -101,7 +100,8 @@ namespace UI.Panels
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            List<UserModel> users = userService.GetUsers();
+            List<UserModel> users = uService.GetUsers();
+
             switch (cmbType.SelectedIndex)
             {
                 case 0: 
@@ -114,6 +114,7 @@ namespace UI.Panels
                     _ticket.Type = TicketType.service;
                     break;
             }
+
             foreach (var user in users)
             {
                 if (user.firstName == cmbUser.Text)
@@ -125,6 +126,7 @@ namespace UI.Panels
                     _ticket.User = Session.user;
                 }
             }
+
             switch (cmbPriority.SelectedIndex)
             {
                 case 0:
@@ -137,6 +139,7 @@ namespace UI.Panels
                     _ticket.Priority = TicketPriority.high;
                     break;
             }
+
             switch (cmbDeadline.SelectedIndex)
             {
                 case 0:
@@ -152,6 +155,7 @@ namespace UI.Panels
                     _ticket.Deadline = _ticket.DateTimeReported.AddMonths(6);
                     break;
             }
+
             _ticket.Description = txtbDescription.Text;
 
             btnCancelEdit.Hide();
@@ -162,7 +166,7 @@ namespace UI.Panels
             btnDelete.Show();
             btnEdit.Show();
 
-            ticketService.UpdateTicket(_ticket);
+            tService.UpdateTicket(_ticket);
 
             LoadDetails(_ticket);
         }
@@ -178,13 +182,11 @@ namespace UI.Panels
             btnResolved.Show();
             btnDelete.Show();
             btnEdit.Show();
-
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ticketService.DeleteTicket(_ticket.id.ToString());
+            tService.DeleteTicket(_ticket.id.ToString());
             MessageBox.Show("Ticket " + _ticket.id.ToString() + " successfully deleted.", "Operation successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnDeleteClick?.Invoke(sender, e);
         }
