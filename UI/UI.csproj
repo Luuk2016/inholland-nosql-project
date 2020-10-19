@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Panels\TicketDetails.Designer.cs">
       <DependentUpon>TicketDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PasswordResetScreen.cs">
       <SubType>Form</SubType>
     </Compile>
