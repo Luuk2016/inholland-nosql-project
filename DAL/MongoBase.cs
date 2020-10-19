@@ -18,9 +18,9 @@ namespace DAL
         }
 
         /*
-        * Get a table
-        * @param string table - the name of the table/collecton
-        * @return List<T> - a list of the specified type
+         * Get a table
+         * @param string table - the name of the table/collecton
+         * @return List<T> - a list of the specified type
         */
         public List<T> GetTable<T>(string table)
         {
@@ -31,10 +31,10 @@ namespace DAL
         }
 
         /*
-        * Get a record of the specified table by ID
-        * @param string table - the name of the table/collecton
-        * @param string id - the id of the record
-        * @return T - an object of the specified type or NULL
+         * Get a record of the specified table by ID
+         * @param string table - the name of the table/collecton
+         * @param string id - the id of the record
+         * @return T - an object of the specified type or NULL
         */
         public T GetRecordById<T>(string table, string id)
         {
@@ -45,11 +45,11 @@ namespace DAL
         }
 
         /*
-        * Get a record of the specified table by key
-        * @param string table - the name of the table/collecton
-        * @param string key - the key (column)
-        * @param string value - the value
-        * @return T - an object of the specified type or NULL
+         * Get a record of the specified table by key
+         * @param string table - the name of the table/collecton
+         * @param string key - the key (column)
+         * @param string value - the value
+         * @return T - an object of the specified type or NULL
         */
         public T GetRecordByKeyValue<T>(string table, string key, string value)
         {
@@ -60,9 +60,9 @@ namespace DAL
         }
 
         /*
-        * Insert a new record in the specified table/collection
-        * @param string table - the name of the table/collecton
-        * @param T record - an object
+         * Insert a new record in the specified table/collection
+         * @param string table - the name of the table/collecton
+         * @param T record - an object
         */
         public void InsertRecord<T>(string table, T record)
         {
@@ -71,9 +71,9 @@ namespace DAL
         }
 
         /*
-        * Delete a record from the specified table by it's ID
-        * @param string table - the name of the table/collecton
-        * @param string id - the id of the record
+         * Delete a record from the specified table by it's ID
+         * @param string table - the name of the table/collecton
+         * @param string id - the id of the record
         */
         public void DeleteRecordById<T>(string table, string id)
         {
@@ -84,10 +84,10 @@ namespace DAL
         }
 
         /*
-        * Get a record from a table by using the specified filter
-        * @param string table - the name of the table/collecton
-        * @param FilterDefinition<T> filter - the filter
-        * @return T - an object of the specified type or NULL
+         * Get a record from a table by using the specified filter
+         * @param string table - the name of the table/collecton
+         * @param FilterDefinition<T> filter - the filter
+         * @return T - an object of the specified type or NULL
         */
         public T GetRecordByFilter<T>(string table, FilterDefinition<T> filter)
         {
@@ -97,9 +97,9 @@ namespace DAL
         }
 
         /*
-        * Update a record
-        * @param string table - the name of the table/collecton
-        * @param string id - the id of the record that should be updated
+         * Update a record
+         * @param string table - the name of the table/collecton
+         * @param string id - the id of the record that should be updated
         */
         public void UpdateRecord<T>(string table, string id, T record)
         {
@@ -109,21 +109,6 @@ namespace DAL
                 new BsonDocument("_id", ObjectId.Parse(id)),
                 record
             );
-        }
-
-        /*
-        * Get a record of the specified table by key
-        * @param string table - the name of the table/collecton
-        * @param string key - the key (column)
-        * @param string value - the value
-        * @return T - an object of the specified type or NULL
-        */
-        public T GetRecordByKeyValue<T>(string table, string key, string value)
-        {
-            var collection = db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq(key, value);
-
-            return collection.Find(filter).FirstOrDefault();
         }
     }
 }
