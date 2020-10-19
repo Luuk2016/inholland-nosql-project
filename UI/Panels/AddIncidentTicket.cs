@@ -37,7 +37,7 @@ namespace UI.Pages
             cmbDate.Text = DateTime.Now.ToString();
             if (Session.user != null)
             {
-                cmbUser.Text = (Session.user.firstName);
+                cmbUser.Text = (Session.user.firstName + " " + Session.user.lastName);
             }
         }
 

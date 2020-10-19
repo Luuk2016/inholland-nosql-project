@@ -33,18 +33,12 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtbEmailFilter = new System.Windows.Forms.TextBox();
             this.btnCreateTicket = new System.Windows.Forms.Button();
-            this.lvUnresolvedTickets = new System.Windows.Forms.ListView();
+            this.lvTickets = new System.Windows.Forms.ListView();
             this.clmID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LvResovledTickets = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,18 +47,16 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.LvResovledTickets, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lvUnresolvedTickets, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lvTickets, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(989, 739);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -122,29 +114,29 @@
             this.btnCreateTicket.UseVisualStyleBackColor = false;
             this.btnCreateTicket.Click += new System.EventHandler(this.btnCreateTicket_Click);
             // 
-            // lvUnresolvedTickets
+            // lvTickets
             // 
-            this.lvUnresolvedTickets.BackColor = System.Drawing.SystemColors.Info;
-            this.lvUnresolvedTickets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvTickets.BackColor = System.Drawing.SystemColors.Info;
+            this.lvTickets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmID,
             this.clmSubject,
             this.clmUser,
             this.clmDate,
             this.clmStatus});
-            this.lvUnresolvedTickets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvUnresolvedTickets.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvUnresolvedTickets.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lvUnresolvedTickets.FullRowSelect = true;
-            this.lvUnresolvedTickets.GridLines = true;
-            this.lvUnresolvedTickets.HideSelection = false;
-            this.lvUnresolvedTickets.Location = new System.Drawing.Point(3, 149);
-            this.lvUnresolvedTickets.Name = "lvUnresolvedTickets";
-            this.lvUnresolvedTickets.Size = new System.Drawing.Size(983, 289);
-            this.lvUnresolvedTickets.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.lvUnresolvedTickets.TabIndex = 2;
-            this.lvUnresolvedTickets.UseCompatibleStateImageBehavior = false;
-            this.lvUnresolvedTickets.View = System.Windows.Forms.View.Details;
-            this.lvUnresolvedTickets.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTickets_MouseDoubleClick);
+            this.lvTickets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvTickets.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvTickets.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lvTickets.FullRowSelect = true;
+            this.lvTickets.GridLines = true;
+            this.lvTickets.HideSelection = false;
+            this.lvTickets.Location = new System.Drawing.Point(3, 149);
+            this.lvTickets.Name = "lvTickets";
+            this.lvTickets.Size = new System.Drawing.Size(983, 587);
+            this.lvTickets.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.lvTickets.TabIndex = 2;
+            this.lvTickets.UseCompatibleStateImageBehavior = false;
+            this.lvTickets.View = System.Windows.Forms.View.Details;
+            this.lvTickets.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTickets_MouseDoubleClick);
             // 
             // clmID
             // 
@@ -168,55 +160,7 @@
             // clmStatus
             // 
             this.clmStatus.Text = "Status";
-            this.clmStatus.Width = 117;
-            // 
-            // LvResovledTickets
-            // 
-            this.LvResovledTickets.BackColor = System.Drawing.SystemColors.Info;
-            this.LvResovledTickets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.LvResovledTickets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LvResovledTickets.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LvResovledTickets.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LvResovledTickets.FullRowSelect = true;
-            this.LvResovledTickets.GridLines = true;
-            this.LvResovledTickets.HideSelection = false;
-            this.LvResovledTickets.Location = new System.Drawing.Point(3, 444);
-            this.LvResovledTickets.Name = "LvResovledTickets";
-            this.LvResovledTickets.Size = new System.Drawing.Size(983, 292);
-            this.LvResovledTickets.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.LvResovledTickets.TabIndex = 3;
-            this.LvResovledTickets.UseCompatibleStateImageBehavior = false;
-            this.LvResovledTickets.View = System.Windows.Forms.View.Details;
-            this.LvResovledTickets.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LvResovledTickets_MouseDoubleClick);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Subject";
-            this.columnHeader2.Width = 300;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "First Name";
-            this.columnHeader3.Width = 250;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Date";
-            this.columnHeader4.Width = 250;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Status";
-            this.columnHeader5.Width = 119;
+            this.clmStatus.Width = 80;
             // 
             // TicketOverview
             // 
@@ -225,7 +169,6 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(989, 739);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Enabled = false;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TicketOverview";
             this.Text = "TicketOverview";
@@ -245,17 +188,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtbEmailFilter;
         private System.Windows.Forms.Button btnCreateTicket;
-        private System.Windows.Forms.ListView lvUnresolvedTickets;
+        private System.Windows.Forms.ListView lvTickets;
         private System.Windows.Forms.ColumnHeader clmID;
         private System.Windows.Forms.ColumnHeader clmSubject;
         private System.Windows.Forms.ColumnHeader clmUser;
         private System.Windows.Forms.ColumnHeader clmDate;
         private System.Windows.Forms.ColumnHeader clmStatus;
-        private System.Windows.Forms.ListView LvResovledTickets;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
