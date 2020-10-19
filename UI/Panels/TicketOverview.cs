@@ -74,7 +74,7 @@ namespace UI.Pages
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(txtbEmailFilter.Text != null || txtbEmailFilter.Text != " ")
+                if(txtbEmailFilter.Text != "")
                 {
                     lvTickets.Items.Clear();
                     List<TicketModel> ticketList = ticketService.GetTickets();
@@ -95,6 +95,8 @@ namespace UI.Pages
                 }
                 else
                 {
+                    lvTickets.Items.Clear();
+
                     LoadLvTickets();
                 }
             }
