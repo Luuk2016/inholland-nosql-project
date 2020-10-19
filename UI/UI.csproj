@@ -116,6 +116,11 @@
     <Compile Include="GlobalPage\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\TicketDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\TicketDetails.Designer.cs">
+      <DependentUpon>TicketDetails.cs</DependentUpon>
     <Compile Include="Pages\PasswordResetScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\TicketDetails.resx">
+      <DependentUpon>TicketDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\TicketOverview.resx">
       <DependentUpon>TicketOverview.cs</DependentUpon>

@@ -110,5 +110,20 @@ namespace DAL
                 record
             );
         }
+
+        /*
+        * Get a record of the specified table by key
+        * @param string table - the name of the table/collecton
+        * @param string key - the key (column)
+        * @param string value - the value
+        * @return T - an object of the specified type or NULL
+        */
+        public T GetRecordByKeyValue<T>(string table, string key, string value)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(key, value);
+
+            return collection.Find(filter).FirstOrDefault();
+        }
     }
 }
