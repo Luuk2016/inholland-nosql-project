@@ -5,6 +5,8 @@ using UI.GlobalPage;
 using Model;
 using Service;
 using OtherFunctions;
+using Bogus;
+using System.Collections.Generic;
 
 namespace UI.Pages
 {
@@ -24,6 +26,21 @@ namespace UI.Pages
 
             // Disable/enable the login functionality (for debugging)
             useLogin = true;
+        }
+
+        private IEnumerable<UserModel> GenerateFakeUsers()
+        {
+            var userGenerator = new Faker<UserModel>()
+                .RuleFor(c => c.firstName, f => f.Name.FirstName())
+                .RuleFor(c => c.lastName, f => f.Name.LastName())
+                .RuleFor(c => c.type, f => "Employee")
+                .RuleFor(c => c.email, f => f.Internet.Email())
+                .RuleFor(c => c.phoneNumber, f => f.Phone.PhoneNumber())
+                .RuleFor(c => c.location, f => f.Address.City())
+                .RuleFor(c => c.hashedPassword, f => "6f0d2873bf8b85ddb1b61042acca41bad80fabd176d12e81b04ca5141eb2343a")
+                .RuleFor(c => c.salt, f => "427c78c8a0887b8a2a50a914cc654fd8dbd1a562da5d9bb4dfba480a77a5e32a");
+
+            return userGenerator.Generate(99);
         }
 
         private void lblForgotPassword_MouseClick(object sender, MouseEventArgs e)
