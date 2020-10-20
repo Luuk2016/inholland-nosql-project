@@ -96,6 +96,5 @@ namespace UI.Pages
 
             return pastDeadline;
         }
-
     }
 }

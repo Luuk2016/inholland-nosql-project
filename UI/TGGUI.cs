@@ -17,11 +17,7 @@ namespace UI
     {
         private LoginScreen loginPartial = new LoginScreen();
         private MainNavigation mainNavigation = new MainNavigation();
-        private AddIncidentTicket addIncidentTicketPartial = new AddIncidentTicket();
-        private AddUser addUserPartial = new AddUser();
-        private DashboardStatistics dashboardStatisticsPartial = new DashboardStatistics();
-        private ManageUsers manageUsersPartial = new ManageUsers();
-        private TicketOverview ticketOverviewPartial = new TicketOverview();
+        public EventHandler btnLoginClick;
 
         public TGGUI()
         {
@@ -46,6 +42,7 @@ namespace UI
         private void LoggedIn(object sender, EventArgs e)
         {
             ShowPanel(mainNavigation);
+            btnLoginClick?.Invoke(sender, e);
         }
 
         private void LoggedOut(object sender, EventArgs e)

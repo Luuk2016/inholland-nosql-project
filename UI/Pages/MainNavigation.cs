@@ -17,6 +17,7 @@ namespace UI.Pages
         AddUser addUserPartial = new AddUser();
         AddIncidentTicket addIncidentTicketPartial = new AddIncidentTicket();
         TicketDetails ticketDetailsPartial = new TicketDetails();
+        LoginScreen loginScreenPartial = new LoginScreen();
         public EventHandler logoutHandler;
 
         protected override List<BaseForm> FormPartials { get; set; }
@@ -36,6 +37,9 @@ namespace UI.Pages
             FormPartials.Add(addIncidentTicketPartial);
             FormPartials.Add(ticketDetailsPartial);
 
+            //show dashboard on login
+            loginScreenPartial.btnLoginClick += HandleLoginClick;
+
             //statistics dashboard
             dashboardStatisticsPartial.btnShowListClick += HandleDashboardShowListClick;
 
@@ -53,6 +57,12 @@ namespace UI.Pages
             addUserPartial.btnCancelClick += HandleAddUserCancelClick;
 
             LoadPanels();
+        }
+
+        //show dashboard on login
+        private void HandleLoginClick(object sender, EventArgs e)
+        {
+            ShowPanel(dashboardStatisticsPartial);
         }
 
         //statistics dashboard
