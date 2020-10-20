@@ -34,6 +34,12 @@ namespace UI.Pages
 
             // Load the PastDeadline chart
             LoadPastDeadlineChart();
+
+            // Load the Category chart
+            LoadCategoryChart();
+
+            // Load the Priority chart
+            LoadPriorityChart();
         }
 
         private void btnShowList_Click(object sender, EventArgs e)
@@ -67,19 +73,45 @@ namespace UI.Pages
             chPastDeadline.Series["pastDeadline"].Points.AddXY("On time", ticketsOnTime.ToString());
         }
 
+        private void LoadCategoryChart()
+        {
+            chCategories.Series["tickets-categories"].IsValueShownAsLabel = true;
+
+            var categories = GetAmountOfTicketsPerCategory();
+
+            // Put the data in the chart
+            chCategories.Series["tickets-categories"].Points.AddXY("Software", categories["software"].ToString());
+            chCategories.Series["tickets-categories"].Points.AddXY("Hardware", categories["hardware"].ToString());
+            chCategories.Series["tickets-categories"].Points.AddXY("Service", categories["service"].ToString());
+
+        }
+
+        private void LoadPriorityChart()
+        {
+            chPriorityLevels.Series["tickets-priority-levels"].IsValueShownAsLabel = true;
+
+            var priorityLevels = GetAmountOfTicketsPerPriorityLevel();
+
+            // Put the data in the chart
+            chPriorityLevels.Series["tickets-priority-levels"].Points.AddXY("Low", priorityLevels["low"].ToString());
+            chPriorityLevels.Series["tickets-priority-levels"].Points.AddXY("Medium", priorityLevels["normal"].ToString());
+            chPriorityLevels.Series["tickets-priority-levels"].Points.AddXY("High", priorityLevels["high"].ToString());
+
+        }
+
         private int GetAmountOfUnresolvedTickets()
         {
-            int resolved = 0;
+            int unresolved = 0;
 
             foreach (TicketModel t in tickets)
             {
                 if (t.Status == "unresolved")
                 {
-                    resolved++;
+                    unresolved++;
                 }
             }
 
-            return resolved;
+            return unresolved;
         }
 
         private int GetAmountOfTicketsPastDeadline()
@@ -96,5 +128,58 @@ namespace UI.Pages
 
             return pastDeadline;
         }
+
+        private Dictionary<string,int> GetAmountOfTicketsPerCategory()
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            result["software"] = 0;
+            result["hardware"] = 0;
+            result["service"] = 0;
+
+            foreach (TicketModel t in tickets)
+            {
+                switch (t.Type)
+                {
+                    case Model.Enums.TicketType.software:
+                        result["software"]++;
+                        break;
+                    case Model.Enums.TicketType.hardware:
+                        result["hardware"]++;
+                        break;
+                    case Model.Enums.TicketType.service:
+                        result["service"]++;
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+        private Dictionary<string, int> GetAmountOfTicketsPerPriorityLevel()
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            result["low"] = 0;
+            result["normal"] = 0;
+            result["high"] = 0;
+
+            foreach (TicketModel t in tickets)
+            {
+                switch (t.Priority)
+                {
+                    case Model.Enums.TicketPriority.low:
+                        result["low"]++;
+                        break;
+                    case Model.Enums.TicketPriority.normal:
+                        result["normal"]++;
+                        break;
+                    case Model.Enums.TicketPriority.high:
+                        result["high"]++;
+                        break;
+                }
+            }
+
+            return result;
+        }
+
     }
 }
