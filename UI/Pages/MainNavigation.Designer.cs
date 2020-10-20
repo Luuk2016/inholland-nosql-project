@@ -225,6 +225,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainNavigation";
             this.Text = "Toolbar";
+            this.Load += new System.EventHandler(this.MainNavigation_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

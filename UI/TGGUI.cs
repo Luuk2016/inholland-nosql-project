@@ -17,7 +17,6 @@ namespace UI
     {
         private LoginScreen loginPartial = new LoginScreen();
         private MainNavigation mainNavigation = new MainNavigation();
-        public EventHandler btnLoginClick;
 
         public TGGUI()
         {
@@ -42,7 +41,6 @@ namespace UI
         private void LoggedIn(object sender, EventArgs e)
         {
             ShowPanel(mainNavigation);
-            btnLoginClick?.Invoke(sender, e);
         }
 
         private void LoggedOut(object sender, EventArgs e)

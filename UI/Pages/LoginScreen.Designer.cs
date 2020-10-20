@@ -115,7 +115,7 @@
             this.txtbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.txtbEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtbEmail.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtbEmail.Location = new System.Drawing.Point(292, 308);
@@ -141,7 +141,7 @@
             this.txtbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtbPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtbPassword.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtbPassword.Location = new System.Drawing.Point(292, 408);
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1046, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
