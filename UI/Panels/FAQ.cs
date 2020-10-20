@@ -65,6 +65,7 @@ namespace UI.Panels
             {
                 btnAddQuestion.Show();
             }
+
             treeViewFAQSoftware.Nodes.Clear();
             treeViewFAQHardware.Nodes.Clear();
             treeViewFAQService.Nodes.Clear();
