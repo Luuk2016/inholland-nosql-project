@@ -58,7 +58,10 @@ namespace UI.Pages
         //statistics dashboard
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            ShowPanel(dashboardStatisticsPartial);
+            if(Session.user.type == "Service desk employee")
+            {
+                ShowPanel(dashboardStatisticsPartial);
+            }
         }
 
         private void HandleDashboardShowListClick(object sender, EventArgs e)
@@ -131,7 +134,14 @@ namespace UI.Pages
 
         private void MainNavigation_Load(object sender, EventArgs e)
         {
-            ShowPanel(dashboardStatisticsPartial);
+            if(Session.user.type == "Service desk employee")
+            {
+                ShowPanel(dashboardStatisticsPartial);
+            }
+            else
+            {
+                ShowPanel(ticketOverviewPartial);
+            }
         }
     }
 }

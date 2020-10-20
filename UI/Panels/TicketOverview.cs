@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using UI.GlobalPage;
 using Service;
 using Model;
+using OtherFunctions;
 
 namespace UI.Pages
 {
@@ -59,7 +60,13 @@ namespace UI.Pages
 
         private void lvTickets_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if(lvTickets.SelectedItems[0].Text != null)
+            if(lvTickets.SelectedItems[0].Text != null && Session.user.type == "Service desk employee")
+            {
+                var id = lvTickets.SelectedItems[0].Text;
+                ticket = tService.GetTicketById(id);
+                ShowTicketDetails?.Invoke(sender, e);
+            }
+            else if(lvTickets.SelectedItems[0].Text != null && Session.user.firstName == lvTickets.SelectedItems[0].SubItems[2].Text)
             {
                 var id = lvTickets.SelectedItems[0].Text;
                 ticket = tService.GetTicketById(id);
