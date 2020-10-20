@@ -93,6 +93,7 @@
             // 
             // cmb_Category
             // 
+            this.cmb_Category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_Category.FormattingEnabled = true;
             this.cmb_Category.Items.AddRange(new object[] {
             "Software",
@@ -103,6 +104,7 @@
             this.cmb_Category.Name = "cmb_Category";
             this.cmb_Category.Size = new System.Drawing.Size(133, 21);
             this.cmb_Category.TabIndex = 23;
+            this.cmb_Category.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_Category_KeyPress);
             // 
             // btnCancel
             // 

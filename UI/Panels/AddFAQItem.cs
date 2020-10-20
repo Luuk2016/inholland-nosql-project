@@ -60,5 +60,10 @@ namespace UI.Panels
         {
             btnFaqCancelClick?.Invoke(sender, e);
         }
+
+        private void cmb_Category_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

@@ -98,6 +98,7 @@
             // 
             // cmb_TypeUser
             // 
+            this.cmb_TypeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_TypeUser.FormattingEnabled = true;
             this.cmb_TypeUser.Items.AddRange(new object[] {
             "Employee",
@@ -107,6 +108,7 @@
             this.cmb_TypeUser.Name = "cmb_TypeUser";
             this.cmb_TypeUser.Size = new System.Drawing.Size(270, 21);
             this.cmb_TypeUser.TabIndex = 19;
+            this.cmb_TypeUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_TypeUser_KeyPress);
             // 
             // btnAdd
             // 
@@ -134,6 +136,7 @@
             // 
             // cmb_Location
             // 
+            this.cmb_Location.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_Location.FormattingEnabled = true;
             this.cmb_Location.Items.AddRange(new object[] {
             "Amsterdam",
@@ -143,6 +146,7 @@
             this.cmb_Location.Name = "cmb_Location";
             this.cmb_Location.Size = new System.Drawing.Size(270, 21);
             this.cmb_Location.TabIndex = 15;
+            this.cmb_Location.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_Location_KeyPress);
             // 
             // txt_Password
             // 

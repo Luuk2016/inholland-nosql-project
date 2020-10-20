@@ -46,5 +46,15 @@ namespace UI.Panels
         {
             btnCancelClick?.Invoke(sender, e);
         }
+
+        private void cmb_TypeUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmb_Location_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     } 
 }

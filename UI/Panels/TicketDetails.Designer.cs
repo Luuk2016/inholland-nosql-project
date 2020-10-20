@@ -116,6 +116,7 @@
             // cmbDate
             // 
             this.cmbDate.Enabled = false;
+            this.cmbDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDate.FormattingEnabled = true;
             this.cmbDate.Items.AddRange(new object[] {
@@ -124,6 +125,7 @@
             this.cmbDate.Name = "cmbDate";
             this.cmbDate.Size = new System.Drawing.Size(497, 25);
             this.cmbDate.TabIndex = 3;
+            this.cmbDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDate_KeyPress);
             // 
             // lblDate
             // 
@@ -185,6 +187,7 @@
             // 
             // cmbType
             // 
+            this.cmbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
@@ -195,6 +198,7 @@
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(497, 25);
             this.cmbType.TabIndex = 3;
+            this.cmbType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbType_KeyPress);
             // 
             // lblType
             // 
@@ -223,12 +227,14 @@
             // 
             // cmbUser
             // 
+            this.cmbUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbUser.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUser.FormattingEnabled = true;
             this.cmbUser.Location = new System.Drawing.Point(211, 3);
             this.cmbUser.Name = "cmbUser";
             this.cmbUser.Size = new System.Drawing.Size(497, 25);
             this.cmbUser.TabIndex = 3;
+            this.cmbUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbUser_KeyPress);
             // 
             // lblUser
             // 
@@ -257,6 +263,7 @@
             // 
             // cmbPriority
             // 
+            this.cmbPriority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbPriority.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPriority.FormattingEnabled = true;
             this.cmbPriority.Items.AddRange(new object[] {
@@ -267,6 +274,7 @@
             this.cmbPriority.Name = "cmbPriority";
             this.cmbPriority.Size = new System.Drawing.Size(497, 25);
             this.cmbPriority.TabIndex = 3;
+            this.cmbPriority.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPriority_KeyPress);
             // 
             // lblPriority
             // 
@@ -305,6 +313,7 @@
             // 
             // cmbDeadline
             // 
+            this.cmbDeadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDeadline.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDeadline.FormattingEnabled = true;
             this.cmbDeadline.Items.AddRange(new object[] {
@@ -316,6 +325,7 @@
             this.cmbDeadline.Name = "cmbDeadline";
             this.cmbDeadline.Size = new System.Drawing.Size(497, 25);
             this.cmbDeadline.TabIndex = 2;
+            this.cmbDeadline.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDeadline_KeyPress);
             // 
             // tableLayoutPanel8
             // 
