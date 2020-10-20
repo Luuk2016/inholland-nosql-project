@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -11,7 +12,7 @@ namespace DAL
 
         public MongoBase()
         {
-            var client = new MongoClient("mongodb+srv://groep2db:ki-adi-muni@cluster0.injcs.azure.mongodb.net/test");
+            var client = new MongoClient(ConfigurationManager.ConnectionStrings["MongoDBConnection"].ConnectionString);
             db = client.GetDatabase("servicedesk");
         }
 
