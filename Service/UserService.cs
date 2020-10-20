@@ -41,10 +41,5 @@ namespace Service
         {
             userDAO.DeleteUser(id);
         }
-
-        public void SendFaqQuestion(FaqModel faq)
-        {
-            userDAO.SendFAQQuestion(faq);
-        }
     }
 }

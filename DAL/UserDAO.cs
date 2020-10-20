@@ -82,10 +82,5 @@ namespace DAL
         {
             DeleteRecordById<UserModel>("users", id);
         }
-
-        public void SendFAQQuestion(FaqModel faq)
-        {
-            InsertFaqQuestion("faq", faq); 
-        }
     }
 }

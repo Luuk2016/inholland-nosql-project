@@ -104,7 +104,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FaqModel.cs" />
+    <Compile Include="Enums\FAQItemType.cs" />
+    <Compile Include="FAQItemModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

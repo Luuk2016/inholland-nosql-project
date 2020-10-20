@@ -20,7 +20,7 @@ namespace UI.Pages
         AddUser addUserPartial = new AddUser();
         AddIncidentTicket addIncidentTicketPartial = new AddIncidentTicket();
         FAQ addFAQPartial = new FAQ();
-        AddQuestions addQuestionsPartial = new AddQuestions();
+        AddFAQItem addQuestionsPartial = new AddFAQItem();
 
         protected override List<BaseForm> FormPartials { get; set; }
         protected override TableLayoutPanel TableLayoutPanel { get; set; }
