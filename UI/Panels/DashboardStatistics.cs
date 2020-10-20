@@ -131,7 +131,7 @@ namespace UI.Pages
 
             foreach (TicketModel t in tickets)
             {
-                if (t.Deadline < DateTime.Now)
+                if (t.Deadline < DateTime.Now && t.Status == "unresolved")
                 {
                     pastDeadline++;
                 }
