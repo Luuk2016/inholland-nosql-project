@@ -9,6 +9,7 @@ namespace Model
     {
         [BsonId]
         public ObjectId id { get; set; }
+        public string userID;
         public DateTime DateTimeReported { get; set; }
         public string Subject { get; set; }
         public TicketType Type { get; set; }

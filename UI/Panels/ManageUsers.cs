@@ -11,20 +11,27 @@ namespace UI.Pages
     {
         public EventHandler btnAddUserClick;
         private UserService uService;
-        
+
+        private TicketService tService;
+        private List<TicketModel> tickets;
 
         public ManageUsers()
         {
             InitializeComponent();
 
             uService = new UserService();
+            tService = new TicketService();
+        }
 
+        private void ManageUsers_VisibleChanged(object sender, EventArgs e)
+        {
             LoadUsersFromDB();
         }
 
         private void LoadUsersFromDB()
         {
             List<UserModel> users = uService.GetUsers();
+            tickets = tService.GetTickets();
 
             lvUsers.Items.Clear();
 
@@ -34,7 +41,7 @@ namespace UI.Pages
                 lvi.SubItems.Add(user.email);
                 lvi.SubItems.Add(user.firstName);
                 lvi.SubItems.Add(user.lastName);
-                lvi.SubItems.Add("#");
+                lvi.SubItems.Add(GetAmountOfTicketsPerUser(user.id.ToString()).ToString());
                 lvUsers.Items.Add(lvi);
             }
         }
@@ -76,6 +83,21 @@ namespace UI.Pages
         private void txtbEmailFilter_MouseClick(object sender, MouseEventArgs e)
         {
             txtbEmailFilter.Clear();
+        }
+
+        private int GetAmountOfTicketsPerUser(string userID)
+        {
+            int result = 0;
+
+            foreach (TicketModel t in tickets)
+            {
+                if (t.userID == userID)
+                {
+                    result++;
+                }
+            }
+
+            return result;
         }
     }
 }
