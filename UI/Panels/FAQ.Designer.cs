@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.treeViewFAQService = new System.Windows.Forms.TreeView();
+            this.treeViewFAQHardware = new System.Windows.Forms.TreeView();
             this.treeViewFAQSoftware = new System.Windows.Forms.TreeView();
             this.btnAddQuestion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.treeViewFAQHardware = new System.Windows.Forms.TreeView();
-            this.treeViewFAQService = new System.Windows.Forms.TreeView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
@@ -51,11 +51,61 @@
             this.panel1.Controls.Add(this.treeViewFAQSoftware);
             this.panel1.Controls.Add(this.btnAddQuestion);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(9, 10);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(967, 482);
+            this.panel1.Size = new System.Drawing.Size(1001, 499);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(665, 125);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(256, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Questions about services";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(356, 125);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(265, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Questions about hardware";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(36, 125);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(257, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Questions about software";
+            // 
+            // treeViewFAQService
+            // 
+            this.treeViewFAQService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.treeViewFAQService.Location = new System.Drawing.Point(660, 153);
+            this.treeViewFAQService.Name = "treeViewFAQService";
+            this.treeViewFAQService.Size = new System.Drawing.Size(269, 314);
+            this.treeViewFAQService.TabIndex = 5;
+            // 
+            // treeViewFAQHardware
+            // 
+            this.treeViewFAQHardware.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.treeViewFAQHardware.Location = new System.Drawing.Point(352, 153);
+            this.treeViewFAQHardware.Name = "treeViewFAQHardware";
+            this.treeViewFAQHardware.Size = new System.Drawing.Size(269, 314);
+            this.treeViewFAQHardware.TabIndex = 4;
             // 
             // treeViewFAQSoftware
             // 
@@ -71,7 +121,7 @@
             this.btnAddQuestion.BackColor = System.Drawing.Color.GreenYellow;
             this.btnAddQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddQuestion.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQuestion.Location = new System.Drawing.Point(763, 41);
+            this.btnAddQuestion.Location = new System.Drawing.Point(797, 41);
             this.btnAddQuestion.Name = "btnAddQuestion";
             this.btnAddQuestion.Size = new System.Drawing.Size(166, 47);
             this.btnAddQuestion.TabIndex = 2;
@@ -89,55 +139,6 @@
             this.label1.Size = new System.Drawing.Size(105, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "FAQ";
-            // 
-            // treeViewFAQHardware
-            // 
-            this.treeViewFAQHardware.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.treeViewFAQHardware.Location = new System.Drawing.Point(352, 153);
-            this.treeViewFAQHardware.Name = "treeViewFAQHardware";
-            this.treeViewFAQHardware.Size = new System.Drawing.Size(269, 314);
-            this.treeViewFAQHardware.TabIndex = 4;
-            // 
-            // treeViewFAQService
-            // 
-            this.treeViewFAQService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.treeViewFAQService.Location = new System.Drawing.Point(660, 153);
-            this.treeViewFAQService.Name = "treeViewFAQService";
-            this.treeViewFAQService.Size = new System.Drawing.Size(269, 314);
-            this.treeViewFAQService.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(36, 125);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(257, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Questions about software";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(356, 125);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(265, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Questions about hardware";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(665, 125);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(256, 25);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Questions about services";
             // 
             // FAQ
             // 

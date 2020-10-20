@@ -69,6 +69,10 @@ namespace UI.Pages
             {
                 ShowPanel(dashboardStatisticsPartial);
             }
+            else
+            {
+                btnDashboard.Enabled = false;
+            }
         }
 
         private void HandleDashboardShowListClick(object sender, EventArgs e)
@@ -117,7 +121,14 @@ namespace UI.Pages
         //usermanagement
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            ShowPanel(manageUsersPartial);
+            if (Session.user.type == "Service desk employee")
+            {
+                ShowPanel(manageUsersPartial);
+            }
+            else
+            {
+                btnUserManagement.Enabled = false;
+            }
         }
 
         private void HandleAddUserClick(object sender, EventArgs e)
@@ -157,6 +168,8 @@ namespace UI.Pages
 
         private void MainNavigation_Load(object sender, EventArgs e)
         {
+            lblName.Text = Session.user.firstName + " " + Session.user.lastName;
+            lblType.Text = Session.user.type;
             if(Session.user.type == "Service desk employee")
             {
                 ShowPanel(dashboardStatisticsPartial);

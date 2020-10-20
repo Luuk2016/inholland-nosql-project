@@ -5,6 +5,7 @@ using UI.GlobalPage;
 using Model;
 using Model.Enums;
 using Service;
+using OtherFunctions;
 
 namespace UI.Panels
 {
@@ -56,6 +57,14 @@ namespace UI.Panels
 
         private void FAQ_VisibleChanged(object sender, EventArgs e)
         {
+            if (Session.user.type == "Employee")
+            {
+                btnAddQuestion.Hide();
+            }
+            else
+            {
+                btnAddQuestion.Show();
+            }
             treeViewFAQSoftware.Nodes.Clear();
             treeViewFAQHardware.Nodes.Clear();
             treeViewFAQService.Nodes.Clear();
