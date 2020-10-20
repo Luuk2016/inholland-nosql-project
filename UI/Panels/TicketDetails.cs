@@ -120,10 +120,12 @@ namespace UI.Panels
                 if (user.firstName == cmbUser.Text)
                 {
                     _ticket.User = user;
+                    _ticket.userID = user.id.ToString();
                 }
                 else
                 {
                     _ticket.User = Session.user;
+                    _ticket.userID = Session.user.id.ToString();
                 }
             }
 

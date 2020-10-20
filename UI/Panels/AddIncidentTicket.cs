@@ -62,6 +62,7 @@ namespace UI.Pages
                         break;
                 }
                 ticket.User = Session.user;
+                ticket.userID = Session.user.id.ToString();
                 switch (cmbPriority.SelectedIndex)
                 {
                     case 0:
