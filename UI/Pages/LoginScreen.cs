@@ -37,10 +37,10 @@ namespace UI.Pages
             if (useLogin)
             {
                 // Check if the username + password have been filled in
-                if (txtbUsername.Text != "" && txtbPassword.Text != "")
+                if (txtbEmail.Text != "" && txtbPassword.Text != "")
                 {
                     // Get the user by using the filled in email
-                    UserModel user = uService.LoginUser(txtbUsername.Text, txtbPassword.Text);
+                    UserModel user = uService.LoginUser(txtbEmail.Text, txtbPassword.Text);
 
                     // Check if the user has been found
                     if (user != null)
@@ -48,6 +48,11 @@ namespace UI.Pages
                         // Set the session
                         Session.user = user;
 
+                        // Clear the fields
+                        txtbEmail.Clear();
+                        txtbPassword.Clear();
+
+                        // Open the new dashboard
                         btnLoginClick?.Invoke(sender, e);
                     }
                     else
@@ -61,13 +66,20 @@ namespace UI.Pages
                 {
                     // Not all fields are filled in, show a warning
                     MessageBox.Show("Please fill in all the required fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtbUsername.Focus();
+                    txtbEmail.Focus();
                 }
             }
             else
             {
+                // Open the new dashboard
                 btnLoginClick?.Invoke(sender, e);
             }
+        }
+        
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            PasswordResetScreen resetScreen = new PasswordResetScreen();
+            resetScreen.Show();
         }
 
         private void lblForgotPassword_MouseEnter(object sender, EventArgs e)

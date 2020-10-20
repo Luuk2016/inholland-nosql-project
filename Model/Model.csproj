@@ -106,6 +106,10 @@
   <ItemGroup>
     <Compile Include="Enums\FAQItemType.cs" />
     <Compile Include="FAQItemModel.cs" />
+    <Compile Include="Enums\TicketPriorityEnum.cs" />
+    <Compile Include="Enums\TicketType.cs" />
+    <Compile Include="TicketModel.cs" />
+    <Compile Include="PasswordResetModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

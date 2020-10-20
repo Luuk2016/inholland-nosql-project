@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtbDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.txtbDescription = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbDeadline = new System.Windows.Forms.ComboBox();
             this.lblDeadline = new System.Windows.Forms.Label();
+            this.cmbDeadline = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblPriority = new System.Windows.Forms.Label();
             this.cmbPriority = new System.Windows.Forms.ComboBox();
+            this.lblPriority = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblUser = new System.Windows.Forms.Label();
             this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.lblUser = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblType = new System.Windows.Forms.Label();
             this.cmbType = new System.Windows.Forms.ComboBox();
+            this.lblType = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtbSubject = new System.Windows.Forms.TextBox();
             this.lblSubject = new System.Windows.Forms.Label();
+            this.txtbSubject = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDate = new System.Windows.Forms.Label();
             this.cmbDate = new System.Windows.Forms.ComboBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -80,19 +80,6 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(956, 92);
             this.tableLayoutPanel9.TabIndex = 9;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(312, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(163, 57);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "CANCEL";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.Highlight;
@@ -106,6 +93,19 @@
             this.btnSubmit.Text = "SUBMIT TICKET";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(312, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(163, 57);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblTitle
             // 
@@ -133,16 +133,6 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(956, 211);
             this.tableLayoutPanel8.TabIndex = 6;
             // 
-            // txtbDescription
-            // 
-            this.txtbDescription.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbDescription.Location = new System.Drawing.Point(227, 3);
-            this.txtbDescription.Multiline = true;
-            this.txtbDescription.Name = "txtbDescription";
-            this.txtbDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtbDescription.Size = new System.Drawing.Size(497, 205);
-            this.txtbDescription.TabIndex = 2;
-            // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
@@ -152,6 +142,16 @@
             this.lblDescription.Size = new System.Drawing.Size(111, 22);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Description:";
+            // 
+            // txtbDescription
+            // 
+            this.txtbDescription.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbDescription.Location = new System.Drawing.Point(227, 3);
+            this.txtbDescription.Multiline = true;
+            this.txtbDescription.Name = "txtbDescription";
+            this.txtbDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtbDescription.Size = new System.Drawing.Size(497, 205);
+            this.txtbDescription.TabIndex = 2;
             // 
             // tableLayoutPanel7
             // 
@@ -168,6 +168,16 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(956, 38);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
+            // lblDeadline
+            // 
+            this.lblDeadline.AutoSize = true;
+            this.lblDeadline.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeadline.Location = new System.Drawing.Point(3, 0);
+            this.lblDeadline.Name = "lblDeadline";
+            this.lblDeadline.Size = new System.Drawing.Size(170, 22);
+            this.lblDeadline.TabIndex = 1;
+            this.lblDeadline.Text = "Deadline/follow up:";
+            // 
             // cmbDeadline
             // 
             this.cmbDeadline.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,16 +191,6 @@
             this.cmbDeadline.Name = "cmbDeadline";
             this.cmbDeadline.Size = new System.Drawing.Size(497, 25);
             this.cmbDeadline.TabIndex = 2;
-            // 
-            // lblDeadline
-            // 
-            this.lblDeadline.AutoSize = true;
-            this.lblDeadline.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeadline.Location = new System.Drawing.Point(3, 0);
-            this.lblDeadline.Name = "lblDeadline";
-            this.lblDeadline.Size = new System.Drawing.Size(170, 22);
-            this.lblDeadline.TabIndex = 1;
-            this.lblDeadline.Text = "Deadline/follow up:";
             // 
             // tableLayoutPanel6
             // 
@@ -207,16 +207,6 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(956, 43);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
-            // lblPriority
-            // 
-            this.lblPriority.AutoSize = true;
-            this.lblPriority.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriority.Location = new System.Drawing.Point(3, 0);
-            this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(73, 22);
-            this.lblPriority.TabIndex = 1;
-            this.lblPriority.Text = "Priority:";
-            // 
             // cmbPriority
             // 
             this.cmbPriority.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,6 +219,16 @@
             this.cmbPriority.Name = "cmbPriority";
             this.cmbPriority.Size = new System.Drawing.Size(497, 25);
             this.cmbPriority.TabIndex = 3;
+            // 
+            // lblPriority
+            // 
+            this.lblPriority.AutoSize = true;
+            this.lblPriority.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriority.Location = new System.Drawing.Point(3, 0);
+            this.lblPriority.Name = "lblPriority";
+            this.lblPriority.Size = new System.Drawing.Size(73, 22);
+            this.lblPriority.TabIndex = 1;
+            this.lblPriority.Text = "Priority:";
             // 
             // tableLayoutPanel5
             // 
@@ -245,6 +245,17 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(956, 40);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
+            // cmbUser
+            // 
+            this.cmbUser.Enabled = false;
+            this.cmbUser.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUser.FormattingEnabled = true;
+            this.cmbUser.Location = new System.Drawing.Point(227, 3);
+            this.cmbUser.Name = "cmbUser";
+            this.cmbUser.Size = new System.Drawing.Size(497, 25);
+            this.cmbUser.TabIndex = 3;
+            this.cmbUser.SelectedValueChanged += new System.EventHandler(this.cmbUser_SelectedValueChanged);
+            // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
@@ -254,21 +265,6 @@
             this.lblUser.Size = new System.Drawing.Size(162, 22);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "Reported by user:";
-            // 
-            // cmbUser
-            // 
-            this.cmbUser.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Items.AddRange(new object[] {
-            "Hank",
-            "Pete",
-            "Claus",
-            "Xynaria",
-            "Thijs"});
-            this.cmbUser.Location = new System.Drawing.Point(227, 3);
-            this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(497, 25);
-            this.cmbUser.TabIndex = 3;
             // 
             // tableLayoutPanel4
             // 
@@ -285,6 +281,19 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(956, 42);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
+            // cmbType
+            // 
+            this.cmbType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Software",
+            "Hardware",
+            "Service"});
+            this.cmbType.Location = new System.Drawing.Point(227, 3);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(497, 25);
+            this.cmbType.TabIndex = 3;
+            // 
             // lblType
             // 
             this.lblType.AutoSize = true;
@@ -294,20 +303,6 @@
             this.lblType.Size = new System.Drawing.Size(149, 22);
             this.lblType.TabIndex = 1;
             this.lblType.Text = "Type of incident:";
-            // 
-            // cmbType
-            // 
-            this.cmbType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
-            "Software",
-            "Hardware",
-            "Service",
-            "Select type"});
-            this.cmbType.Location = new System.Drawing.Point(227, 3);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(497, 25);
-            this.cmbType.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -324,14 +319,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(956, 38);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // txtbSubject
-            // 
-            this.txtbSubject.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbSubject.Location = new System.Drawing.Point(227, 3);
-            this.txtbSubject.Name = "txtbSubject";
-            this.txtbSubject.Size = new System.Drawing.Size(497, 25);
-            this.txtbSubject.TabIndex = 2;
-            // 
             // lblSubject
             // 
             this.lblSubject.AutoSize = true;
@@ -341,6 +328,14 @@
             this.lblSubject.Size = new System.Drawing.Size(171, 22);
             this.lblSubject.TabIndex = 1;
             this.lblSubject.Text = "Subject of incident:";
+            // 
+            // txtbSubject
+            // 
+            this.txtbSubject.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbSubject.Location = new System.Drawing.Point(227, 3);
+            this.txtbSubject.Name = "txtbSubject";
+            this.txtbSubject.Size = new System.Drawing.Size(497, 25);
+            this.txtbSubject.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
@@ -357,6 +352,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(956, 39);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // cmbDate
+            // 
+            this.cmbDate.Enabled = false;
+            this.cmbDate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDate.FormattingEnabled = true;
+            this.cmbDate.Items.AddRange(new object[] {
+            "Select date"});
+            this.cmbDate.Location = new System.Drawing.Point(229, 3);
+            this.cmbDate.Name = "cmbDate";
+            this.cmbDate.Size = new System.Drawing.Size(497, 25);
+            this.cmbDate.TabIndex = 3;
+            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
@@ -366,17 +373,6 @@
             this.lblDate.Size = new System.Drawing.Size(173, 22);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "Date/time reported:";
-            // 
-            // cmbDate
-            // 
-            this.cmbDate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDate.FormattingEnabled = true;
-            this.cmbDate.Items.AddRange(new object[] {
-            "Select date"});
-            this.cmbDate.Location = new System.Drawing.Point(229, 3);
-            this.cmbDate.Name = "cmbDate";
-            this.cmbDate.Size = new System.Drawing.Size(497, 25);
-            this.cmbDate.TabIndex = 3;
             // 
             // tableLayoutPanel1
             // 
@@ -411,11 +407,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(962, 716);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddIncidentTicket";
             this.Text = "ManageUsers";
+            this.VisibleChanged += new System.EventHandler(this.AddIncidentTicket_VisibleChanged);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();

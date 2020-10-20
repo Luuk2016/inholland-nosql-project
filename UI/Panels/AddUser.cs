@@ -1,13 +1,6 @@
 ﻿using Model;
 using Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.GlobalPage;
 using OtherFunctions;
@@ -37,7 +30,7 @@ namespace UI.Panels
                 user.phoneNumber = txt_PhoneNumber.Text;
                 user.location = cmb_Location.Text;
                 user.hashedPassword = Cryptography.GeneratePasswordHash(txt_Password.Text);
-                user.salt = Cryptography.getSalt();
+                user.salt = Cryptography.GetSalt();
 
                 uService.CreateUser(user);
 

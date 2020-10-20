@@ -58,6 +58,7 @@
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
@@ -127,6 +128,17 @@
     </Compile>
     <Compile Include="Panels\AddFAQItem.Designer.cs">
       <DependentUpon>AddFAQItem.cs</DependentUpon>
+    <Compile Include="Panels\TicketDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\TicketDetails.Designer.cs">
+      <DependentUpon>TicketDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PasswordResetScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PasswordResetScreen.Designer.cs">
+      <DependentUpon>PasswordResetScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="TGGUI.cs">
       <SubType>Form</SubType>
@@ -187,6 +199,9 @@
     <EmbeddedResource Include="Pages\MainNavigation.resx">
       <DependentUpon>MainNavigation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PasswordResetScreen.resx">
+      <DependentUpon>PasswordResetScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\AddIncidentTicket.resx">
       <DependentUpon>AddIncidentTicket.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\TicketDetails.resx">
+      <DependentUpon>TicketDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\TicketOverview.resx">
       <DependentUpon>TicketOverview.cs</DependentUpon>

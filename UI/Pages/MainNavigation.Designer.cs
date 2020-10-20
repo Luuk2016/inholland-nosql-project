@@ -39,6 +39,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnIncidentManagement = new System.Windows.Forms.Button();
             this.btnUserManagement = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pageLayoutContent = new System.Windows.Forms.TableLayoutPanel();
             this.btn_FAQ = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -149,14 +150,14 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 303F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.Controls.Add(this.btnDashboard, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnIncidentManagement, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnUserManagement, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btn_FAQ, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnLogout, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 131);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -173,7 +174,7 @@
             this.btnDashboard.Location = new System.Drawing.Point(4, 4);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(323, 34);
+            this.btnDashboard.Size = new System.Drawing.Size(285, 29);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
@@ -183,10 +184,9 @@
             // 
             this.btnIncidentManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnIncidentManagement.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncidentManagement.Location = new System.Drawing.Point(335, 4);
-            this.btnIncidentManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIncidentManagement.Location = new System.Drawing.Point(294, 3);
             this.btnIncidentManagement.Name = "btnIncidentManagement";
-            this.btnIncidentManagement.Size = new System.Drawing.Size(323, 34);
+            this.btnIncidentManagement.Size = new System.Drawing.Size(285, 29);
             this.btnIncidentManagement.TabIndex = 1;
             this.btnIncidentManagement.Text = "Incident Management";
             this.btnIncidentManagement.UseVisualStyleBackColor = true;
@@ -196,14 +196,24 @@
             // 
             this.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUserManagement.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserManagement.Location = new System.Drawing.Point(666, 4);
-            this.btnUserManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUserManagement.Location = new System.Drawing.Point(585, 3);
             this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Size = new System.Drawing.Size(323, 34);
+            this.btnUserManagement.Size = new System.Drawing.Size(285, 29);
             this.btnUserManagement.TabIndex = 2;
             this.btnUserManagement.Text = "User Management";
             this.btnUserManagement.UseVisualStyleBackColor = true;
             this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Arial", 12.75F);
+            this.btnLogout.Location = new System.Drawing.Point(876, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(93, 29);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pageLayoutContent
             // 
@@ -238,6 +248,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "MainNavigation";
             this.Text = "Toolbar";
+            this.Load += new System.EventHandler(this.MainNavigation_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
