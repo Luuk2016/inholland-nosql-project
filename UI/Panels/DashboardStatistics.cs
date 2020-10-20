@@ -22,13 +22,16 @@ namespace UI.Pages
 
             // Initialize the ticketService 
             tService = new TicketService();
+        }
 
+        private void DashboardStatistics_VisibleChanged(object sender, EventArgs e)
+        {
             // Get all the tickets
             tickets = tService.GetTickets();
 
             // Get the amount of tickets that are in the DB
             amountOfTickets = tickets.Count;
-            
+
             // Load the Unresolved/Resolved chart
             LoadResolvedUnresolvedChart();
 
@@ -49,6 +52,8 @@ namespace UI.Pages
 
         private void LoadResolvedUnresolvedChart()
         {
+            chResolvedUnresolvedTickets.Series["unresolved-resolved-tickets"].Points.Clear();
+
             chResolvedUnresolvedTickets.Series["unresolved-resolved-tickets"].IsValueShownAsLabel = true;
 
             // The amount of tickets that are unresolved
@@ -62,6 +67,8 @@ namespace UI.Pages
 
         private void LoadPastDeadlineChart()
         {
+            chPastDeadline.Series["pastDeadline"].Points.Clear();
+
             chPastDeadline.Series["pastDeadline"].IsValueShownAsLabel = true;
 
             // The amount of tickets that are past the deadline
@@ -75,6 +82,8 @@ namespace UI.Pages
 
         private void LoadCategoryChart()
         {
+            chCategories.Series["tickets-categories"].Points.Clear();
+
             chCategories.Series["tickets-categories"].IsValueShownAsLabel = true;
 
             var categories = GetAmountOfTicketsPerCategory();
@@ -88,6 +97,8 @@ namespace UI.Pages
 
         private void LoadPriorityChart()
         {
+            chPriorityLevels.Series["tickets-priority-levels"].Points.Clear();
+
             chPriorityLevels.Series["tickets-priority-levels"].IsValueShownAsLabel = true;
 
             var priorityLevels = GetAmountOfTicketsPerPriorityLevel();
@@ -180,6 +191,5 @@ namespace UI.Pages
 
             return result;
         }
-
     }
 }

@@ -21,15 +21,17 @@ namespace UI.Pages
 
             uService = new UserService();
             tService = new TicketService();
+        }
 
-            tickets = tService.GetTickets();
-
+        private void ManageUsers_VisibleChanged(object sender, EventArgs e)
+        {
             LoadUsersFromDB();
         }
 
         private void LoadUsersFromDB()
         {
             List<UserModel> users = uService.GetUsers();
+            tickets = tService.GetTickets();
 
             lvUsers.Items.Clear();
 

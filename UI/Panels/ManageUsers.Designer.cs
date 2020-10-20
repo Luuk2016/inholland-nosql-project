@@ -170,6 +170,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManageUsers";
             this.Text = "AddIncidentTicket";
+            this.VisibleChanged += new System.EventHandler(this.ManageUsers_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

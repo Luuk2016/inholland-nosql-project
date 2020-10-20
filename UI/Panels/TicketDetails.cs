@@ -121,6 +121,7 @@ namespace UI.Panels
                 {
                     _ticket.User = user;
                     _ticket.userID = user.id.ToString();
+                    break;
                 }
                 else
                 {

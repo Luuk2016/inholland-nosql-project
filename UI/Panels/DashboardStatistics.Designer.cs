@@ -272,6 +272,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DashboardStatistics";
             this.Text = "DashboardStatistics";
+            this.VisibleChanged += new System.EventHandler(this.DashboardStatistics_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chPriorityLevels)).EndInit();
