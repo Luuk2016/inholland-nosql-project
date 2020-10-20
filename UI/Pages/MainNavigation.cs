@@ -16,9 +16,11 @@ namespace UI.Pages
         TicketOverview ticketOverviewPartial = new TicketOverview();
         AddUser addUserPartial = new AddUser();
         AddIncidentTicket addIncidentTicketPartial = new AddIncidentTicket();
+        FAQ addFAQPartial = new FAQ();
+        AddFAQItem addQuestionsPartial = new AddFAQItem();
         TicketDetails ticketDetailsPartial = new TicketDetails();
+        
         public EventHandler logoutHandler;
-
         protected override List<BaseForm> FormPartials { get; set; }
         protected override TableLayoutPanel TableLayoutPanel { get; set; }
 
@@ -34,6 +36,8 @@ namespace UI.Pages
             FormPartials.Add(dashboardStatisticsPartial);
             FormPartials.Add(addUserPartial);
             FormPartials.Add(addIncidentTicketPartial);
+            FormPartials.Add(addFAQPartial);
+            FormPartials.Add(addQuestionsPartial);
             FormPartials.Add(ticketDetailsPartial);
 
             //statistics dashboard
@@ -51,6 +55,9 @@ namespace UI.Pages
             //usermanagement
             manageUsersPartial.btnAddUserClick += HandleAddUserClick;
             addUserPartial.btnCancelClick += HandleAddUserCancelClick;
+
+            addFAQPartial.btnAddQuestionClick += HandleAddQuestionClick;
+            addQuestionsPartial.btnFaqCancelClick += HandleAddFaqCancelClick;
 
             LoadPanels();
         }
@@ -121,6 +128,22 @@ namespace UI.Pages
         private void HandleAddUserCancelClick(object sender, EventArgs e)
         {
             ShowPanel(manageUsersPartial);
+        }
+
+        //FAQ
+        private void btn_FAQ_Click(object sender, EventArgs e)
+        {
+            ShowPanel(addFAQPartial);
+        }
+
+        private void HandleAddQuestionClick(object sender, EventArgs e)
+        {
+            ShowPanel(addQuestionsPartial);
+        }
+
+        private void HandleAddFaqCancelClick(object sender, EventArgs e)
+        {
+            ShowPanel(addFAQPartial);
         }
 
         //logout

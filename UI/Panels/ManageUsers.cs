@@ -11,6 +11,7 @@ namespace UI.Pages
     public partial class ManageUsers : BaseForm
     {
         public EventHandler btnAddUserClick;
+
         private UserService uService;
 
         private TicketService tService;
