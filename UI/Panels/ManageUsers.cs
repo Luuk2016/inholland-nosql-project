@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using UI.GlobalPage;
 using Model;
 using Service;
+using OtherFunctions;
 
 namespace UI.Pages
 {
@@ -26,6 +27,14 @@ namespace UI.Pages
 
         private void ManageUsers_VisibleChanged(object sender, EventArgs e)
         {
+            if (Session.user.type == "Employee")
+            {
+                btnAddUser.Hide();
+            }
+            else
+            {
+                btnAddUser.Show();
+            }
             LoadUsersFromDB();
         }
 

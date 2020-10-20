@@ -57,7 +57,7 @@ namespace UI.Pages
                 if (txtbEmail.Text != "" && txtbPassword.Text != "")
                 {
                     // Get the user by using the filled in email
-                    UserModel user = uService.LoginUser(txtbEmail.Text, txtbPassword.Text);
+                    UserModel user = uService.LoginUser(txtbEmail.Text, txtbPassword.Text) ;
 
                     // Check if the user has been found
                     if (user != null)

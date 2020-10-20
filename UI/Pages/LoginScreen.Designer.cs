@@ -59,6 +59,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnLogin, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.9697F));
@@ -82,7 +83,7 @@
             this.lblNoDesk.Location = new System.Drawing.Point(279, 88);
             this.lblNoDesk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoDesk.Name = "lblNoDesk";
-            this.lblNoDesk.Size = new System.Drawing.Size(224, 37);
+            this.lblNoDesk.Size = new System.Drawing.Size(279, 46);
             this.lblNoDesk.TabIndex = 0;
             this.lblNoDesk.Text = "NoDesk: TGG";
             // 
@@ -95,7 +96,7 @@
             this.lblInstructions.Location = new System.Drawing.Point(238, 134);
             this.lblInstructions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(305, 66);
+            this.lblInstructions.Size = new System.Drawing.Size(473, 54);
             this.lblInstructions.TabIndex = 1;
             this.lblInstructions.Text = "Please  provide login credentials to login to\r\nNoDesk for The Garden Group";
             this.lblInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +137,7 @@
             this.lblPassword.Location = new System.Drawing.Point(221, 315);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(74, 17);
+            this.lblPassword.Size = new System.Drawing.Size(94, 22);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
@@ -180,7 +181,7 @@
             this.lblForgotPassword.Location = new System.Drawing.Point(163, 9);
             this.lblForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(175, 17);
+            this.lblForgotPassword.Size = new System.Drawing.Size(230, 22);
             this.lblForgotPassword.TabIndex = 1;
             this.lblForgotPassword.Text = "Forgot Login Credentials?";
             this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
@@ -194,9 +195,10 @@
             this.cbRemember.AutoSize = true;
             this.cbRemember.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRemember.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cbRemember.Location = new System.Drawing.Point(3, 7);
+            this.cbRemember.Location = new System.Drawing.Point(4, 13);
+            this.cbRemember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbRemember.Name = "cbRemember";
-            this.cbRemember.Size = new System.Drawing.Size(126, 21);
+            this.cbRemember.Size = new System.Drawing.Size(160, 26);
             this.cbRemember.TabIndex = 8;
             this.cbRemember.Text = "Remember me";
             this.cbRemember.UseVisualStyleBackColor = true;
@@ -211,7 +213,7 @@
             this.btnLogin.Location = new System.Drawing.Point(330, 429);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(122, 47);
+            this.btnLogin.Size = new System.Drawing.Size(163, 58);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -219,7 +221,7 @@
             // 
             // LoginScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(784, 537);

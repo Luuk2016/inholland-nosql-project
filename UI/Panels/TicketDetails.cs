@@ -54,6 +54,20 @@ namespace UI.Panels
             txtbDescription.Text = _ticket.Description;
 
             LoadUsers();
+            if(Session.user.type == "Employee")
+            {
+                btnDelete.Hide();
+                btnEdit.Hide();
+                btnResolved.Hide();
+                btnCancel.Text = "BACK";
+            }
+            else
+            {
+                btnDelete.Show();
+                btnEdit.Show();
+                btnResolved.Show();
+                btnCancel.Text = "CANCEL";
+            }
 
             cmbDate.Enabled = false;
             txtbSubject.Enabled = false;
