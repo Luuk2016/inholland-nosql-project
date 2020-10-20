@@ -91,7 +91,7 @@
             this.pnl_CreateUser.Controls.Add(this.label1);
             this.pnl_CreateUser.Controls.Add(this.label2);
             this.pnl_CreateUser.Location = new System.Drawing.Point(9, 10);
-            this.pnl_CreateUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_CreateUser.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_CreateUser.Name = "pnl_CreateUser";
             this.pnl_CreateUser.Size = new System.Drawing.Size(944, 688);
             this.pnl_CreateUser.TabIndex = 2;
@@ -103,7 +103,7 @@
             "Employee",
             "Service desk employee"});
             this.cmb_TypeUser.Location = new System.Drawing.Point(327, 243);
-            this.cmb_TypeUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_TypeUser.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_TypeUser.Name = "cmb_TypeUser";
             this.cmb_TypeUser.Size = new System.Drawing.Size(270, 21);
             this.cmb_TypeUser.TabIndex = 19;
@@ -113,7 +113,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Location = new System.Drawing.Point(464, 544);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(133, 51);
             this.btnAdd.TabIndex = 18;
@@ -124,7 +124,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(327, 544);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(133, 51);
             this.btnCancel.TabIndex = 17;
@@ -139,7 +139,7 @@
             "Amsterdam",
             "Haarlem"});
             this.cmb_Location.Location = new System.Drawing.Point(327, 393);
-            this.cmb_Location.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Location.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Location.Name = "cmb_Location";
             this.cmb_Location.Size = new System.Drawing.Size(270, 21);
             this.cmb_Location.TabIndex = 15;
@@ -147,7 +147,7 @@
             // txt_Password
             // 
             this.txt_Password.Location = new System.Drawing.Point(327, 443);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(270, 20);
             this.txt_Password.TabIndex = 14;
@@ -156,7 +156,7 @@
             // txt_PhoneNumber
             // 
             this.txt_PhoneNumber.Location = new System.Drawing.Point(327, 343);
-            this.txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txt_PhoneNumber.Name = "txt_PhoneNumber";
             this.txt_PhoneNumber.Size = new System.Drawing.Size(270, 20);
             this.txt_PhoneNumber.TabIndex = 12;
@@ -164,7 +164,7 @@
             // txt_Email
             // 
             this.txt_Email.Location = new System.Drawing.Point(327, 292);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(270, 20);
             this.txt_Email.TabIndex = 11;
@@ -172,7 +172,7 @@
             // txt_LastName
             // 
             this.txt_LastName.Location = new System.Drawing.Point(327, 193);
-            this.txt_LastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_LastName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(270, 20);
             this.txt_LastName.TabIndex = 9;
@@ -180,7 +180,7 @@
             // txt_FirstName
             // 
             this.txt_FirstName.Location = new System.Drawing.Point(327, 143);
-            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(270, 20);
             this.txt_FirstName.TabIndex = 8;
@@ -255,10 +255,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(962, 716);
             this.Controls.Add(this.pnl_CreateUser);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddUser";
             this.Text = "AddUser";
             this.pnl_CreateUser.ResumeLayout(false);

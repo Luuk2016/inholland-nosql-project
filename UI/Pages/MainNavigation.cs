@@ -128,5 +128,10 @@ namespace UI.Pages
 
             logoutHandler?.Invoke(sender, e);
         }
+
+        private void MainNavigation_Load(object sender, EventArgs e)
+        {
+            ShowPanel(dashboardStatisticsPartial);
+        }
     }
 }

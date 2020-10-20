@@ -17,11 +17,6 @@ namespace UI
     {
         private LoginScreen loginPartial = new LoginScreen();
         private MainNavigation mainNavigation = new MainNavigation();
-        private AddIncidentTicket addIncidentTicketPartial = new AddIncidentTicket();
-        private AddUser addUserPartial = new AddUser();
-        private DashboardStatistics dashboardStatisticsPartial = new DashboardStatistics();
-        private ManageUsers manageUsersPartial = new ManageUsers();
-        private TicketOverview ticketOverviewPartial = new TicketOverview();
 
         public TGGUI()
         {
