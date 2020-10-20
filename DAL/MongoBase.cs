@@ -91,7 +91,6 @@ namespace DAL
         public T GetRecordByFilter<T>(string table, FilterDefinition<T> filter)
         {
             var collection = db.GetCollection<T>(table);
-
             return collection.Find(filter).FirstOrDefault();
         }
 
