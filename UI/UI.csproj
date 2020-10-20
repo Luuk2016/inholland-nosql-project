@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Panels\AddFAQItem.Designer.cs">
       <DependentUpon>AddFAQItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\TicketDetails.cs">
       <SubType>Form</SubType>
     </Compile>

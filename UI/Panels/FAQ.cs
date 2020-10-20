@@ -12,7 +12,6 @@ namespace UI.Panels
     {
         public EventHandler btnAddQuestionClick;
 
-        private UserService uService;
         private FAQService fService;
 
         private List<FAQItemModel> faqItems;
@@ -21,16 +20,13 @@ namespace UI.Panels
         {
             InitializeComponent();
 
-            uService = new UserService();
             fService = new FAQService();
-
-            faqItems = fService.GetFAQItems();
-
-            LoadFAQItems();
         }
 
         private void LoadFAQItems()
-        { 
+        {
+            faqItems = fService.GetFAQItems();
+
             foreach (FAQItemModel fItem in faqItems)
             {
                 TreeNode answer = new TreeNode(fItem.answer);
@@ -60,6 +56,10 @@ namespace UI.Panels
 
         private void FAQ_VisibleChanged(object sender, EventArgs e)
         {
+            treeViewFAQSoftware.Nodes.Clear();
+            treeViewFAQHardware.Nodes.Clear();
+            treeViewFAQService.Nodes.Clear();
+
             LoadFAQItems();
         }
     }

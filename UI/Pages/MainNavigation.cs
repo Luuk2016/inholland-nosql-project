@@ -141,6 +141,8 @@ namespace UI.Pages
         private void HandleAddFaqCancelClick(object sender, EventArgs e)
         {
             ShowPanel(addFAQPartial);
+        }
+
         //logout
         private void btnLogout_Click(object sender, EventArgs e)
         {
